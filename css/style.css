@@ -2314,8 +2314,12 @@ section {
 
 /* about専用ブロックレイアウト */
 .about-blocks-wrap .crisis-block {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45% 55%;
   align-items: start;
+}
+
+.about-blocks-wrap .crisis-block--alt {
+  grid-template-columns: 55% 45%;
 }
 
 .about-blocks-wrap .crisis-image-wrap {
@@ -2329,6 +2333,20 @@ section {
   background: #0a0a14;
 }
 
+.about-blocks-wrap .crisis-text {
+  padding: 40px 48px 40px 44px;
+}
+
+@media (max-width: 1200px) {
+  .about-blocks-wrap .crisis-block,
+  .about-blocks-wrap .crisis-block--alt {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-blocks-wrap .crisis-text {
+    padding: 32px 36px;
+  }
+}
+
 @media (max-width: 900px) {
   .about-blocks-wrap .crisis-block,
   .about-blocks-wrap .crisis-block--alt {
@@ -2338,21 +2356,59 @@ section {
   .about-blocks-wrap .crisis-image-wrap {
     aspect-ratio: 16 / 9;
   }
-}
-
-/* about専用テキストパディング */
-.about-blocks-wrap .crisis-text {
-  padding: 40px 48px 40px 44px;
-}
-
-@media (max-width: 1200px) {
-  .about-blocks-wrap .crisis-text {
-    padding: 32px 36px 32px 36px;
-  }
-}
-
-@media (max-width: 900px) {
   .about-blocks-wrap .crisis-text {
     padding: 28px 24px;
   }
+}
+
+/* ファクト注釈 */
+.about-disclaimer {
+  font-size: 0.78rem !important;
+  color: var(--c-text-2) !important;
+  border-left: 3px solid rgba(200,170,100,0.4);
+  padding-left: 10px;
+  margin-top: 1rem !important;
+  line-height: 1.7;
+}
+
+/* 記事の読み方ボックス */
+.editorial-note {
+  margin: 0 auto 8px;
+  max-width: 800px;
+  padding: 16px 20px;
+  background: rgba(200,170,100,0.06);
+  border: 1px solid rgba(200,170,100,0.25);
+  border-left: 4px solid var(--c-gold);
+  border-radius: 0 8px 8px 0;
+}
+
+.editorial-note--light {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.12);
+  border-left-color: var(--c-navy);
+}
+
+.editorial-note-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-gold);
+  margin-bottom: 8px;
+  font-family: var(--f-sans);
+}
+
+.editorial-note--light .editorial-note-label {
+  color: var(--c-navy);
+}
+
+.editorial-note p {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--c-text-2);
+  margin: 0;
+}
+
+.editorial-note strong {
+  color: var(--c-navy);
 }
