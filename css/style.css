@@ -2414,57 +2414,188 @@ section {
 }
 
 /* ============================================
-   about①タスクフォース ブロック修正
+   筆者分析ボックス
    ============================================ */
-
-/* ②画像下余白解消：縦長画像をcoverで埋める */
-#about-taskforce .crisis-image-wrap {
-  aspect-ratio: 4 / 3;
-}
-#about-taskforce .crisis-img {
-  object-fit: cover;
-  object-position: center top;
-  background: none;
-}
-
-/* ①一帯一路カード化（紺背景＋金ボーダー） */
-#about-taskforce .crisis-text > p:last-of-type {
-  background: var(--c-navy, #1a2d4f);
-  color: #e8dcc8;
+.author-analysis {
+  background: rgba(26, 45, 79, 0.06);
+  border: 1px solid rgba(184, 146, 72, 0.3);
   border-left: 4px solid var(--c-gold, #b89248);
   border-radius: 8px;
-  padding: 18px 20px;
-  margin-top: 1.2rem;
-  line-height: 1.8;
-  font-size: 0.93rem;
-  text-align: left;
+  padding: 20px 22px;
+  margin: 1.5rem 0 1.2rem;
 }
-#about-taskforce .crisis-text > p:last-of-type strong {
+.author-analysis__label {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
   color: var(--c-gold, #b89248);
+  background: rgba(184, 146, 72, 0.1);
+  border: 1px solid rgba(184, 146, 72, 0.35);
+  border-radius: 3px; padding: 2px 8px; margin-bottom: 10px;
+  font-family: var(--f-sans);
+}
+.author-analysis p { font-size: 0.9rem; line-height: 1.85; color: var(--c-text-2); margin: 0; text-align: left !important; }
+.author-analysis p strong { color: var(--c-navy, #1a2d4f); }
+
+/* crisis・about 全修正統合 */
+#crisis-hormuz, #crisis-storage { grid-template-columns: 44% 56% !important; }
+#crisis-malacca, #crisis-debt { grid-template-columns: 56% 44% !important; }
+.crisis-blocks-wrap .crisis-text { padding: 32px 28px !important; }
+
+.bridge-text--lead {
+  font-family: var(--f-serif); font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--c-text-2); margin-bottom: 0.3rem; line-height: 1.4;
+}
+.bridge-text--large {
+  font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.2;
+  letter-spacing: 0.05em; margin-bottom: 2rem; white-space: nowrap;
+}
+.bridge-text--large strong { color: var(--c-gold, #b89248); font-size: inherit; }
+
+#about-taskforce .crisis-image-wrap { aspect-ratio: 4 / 3; }
+#about-taskforce .crisis-img { object-fit: cover; object-position: center top; background: none; }
+#about-taskforce .crisis-text > p:last-of-type {
+  background: var(--c-navy, #1a2d4f); color: #e8dcc8;
+  border-left: 4px solid var(--c-gold, #b89248); border-radius: 8px;
+  padding: 18px 20px; margin-top: 1.2rem; line-height: 1.8; font-size: 0.93rem;
+}
+#about-taskforce .crisis-text > p:last-of-type strong { color: var(--c-gold, #b89248); }
+
+#about-finance1 .crisis-image-wrap { aspect-ratio: 3 / 4; align-self: stretch; }
+#about-finance1 .crisis-img { object-fit: cover; object-position: center top; background: none; }
+
+#about-oda .crisis-image-wrap { aspect-ratio: 16 / 9; align-self: center; }
+#about-oda .crisis-img { object-fit: cover; object-position: center center; background: none; }
+
+#about-clause .crisis-image-wrap { aspect-ratio: 3 / 4; align-self: stretch; }
+#about-clause .crisis-img { object-fit: cover; object-position: center top; background: none; }
+
+.oda-card-highlight, .key-card {
+  background: var(--c-navy, #1a2d4f); color: #e8dcc8 !important;
+  border-left: 4px solid var(--c-gold, #b89248); border-radius: 8px;
+  padding: 18px 20px !important; margin-top: 1.2rem !important;
+  line-height: 1.8 !important; font-size: 0.93rem !important; text-align: left !important;
+}
+.oda-card-highlight strong, .key-card strong { color: var(--c-gold, #b89248); }
+
+.crisis-num, .crisis-heading, .crisis-text > p,
+.crisis-risk-item > p, .crisis-storage-card > p,
+.about-blocks-wrap .crisis-text > p,
+.about-blocks-wrap .crisis-heading,
+.about-blocks-wrap .crisis-num,
+.about-disclaimer { text-align: left; }
+
+/* ============================================
+   ①about-patrol 画像の黒余白解消
+   2枚目（横長）もcoverで埋める
+   ============================================ */
+#about-patrol .crisis-image-stack .crisis-image-wrap {
+  aspect-ratio: unset;
+  flex: 1;
+}
+#about-patrol .crisis-image-stack .crisis-img {
+  object-fit: cover !important;
+  background: none !important;
 }
 
 /* ============================================
-   about② finance1 新画像（3:4縦長）対応
+   ②筆者分析 独立配置スタイル
    ============================================ */
-#about-finance1 .crisis-image-wrap {
+.author-analysis--standalone {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 24px 32px;
+}
+
+@media (max-width: 768px) {
+  .author-analysis--standalone {
+    padding: 20px 16px;
+    margin: 1.5rem 16px 0;
+  }
+}
+
+/* ============================================
+   about-patrol 1枚目画像：左端が見切れないよう左寄せ
+   ============================================ */
+#about-patrol .crisis-image-stack .crisis-image-wrap:first-child .crisis-img {
+  object-position: left center !important;
+}
+
+/* ============================================
+   about-patrol グリッド比率調整
+   テキスト40% : 画像60% に変更
+   ============================================ */
+#about-patrol {
+  grid-template-columns: 40% 60% !important;
+}
+
+/* object-positionをcenterに戻す */
+#about-patrol .crisis-image-stack .crisis-image-wrap:first-child .crisis-img {
+  object-position: center center !important;
+}
+
+/* ============================================
+   about-patrol 新画像（4:3）対応
+   グリッドを50:50に戻してaspect-ratioを4:3に
+   ============================================ */
+#about-patrol {
+  grid-template-columns: 45% 55% !important;
+}
+
+#about-patrol .crisis-image-stack .crisis-image-wrap {
+  aspect-ratio: 4 / 3 !important;
+}
+
+#about-patrol .crisis-image-stack .crisis-img {
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: none !important;
+}
+
+/* ============================================
+   about-fund 新画像（縦長3:4）対応
+   ============================================ */
+#about-fund .crisis-image-wrap {
   aspect-ratio: 3 / 4;
   align-self: stretch;
 }
-#about-finance1 .crisis-img {
+#about-fund .crisis-img {
+  object-fit: cover;
+  object-position: center top;
+  background: none;
+}
+
+/* 筆者分析インライン版（ブロック内配置） */
+.author-analysis--inline {
+  margin-top: 1rem;
+}
+
+/* ============================================
+   about-defense 新画像（2:3縦長）対応
+   ============================================ */
+#about-defense .crisis-image-wrap {
+  aspect-ratio: 2 / 3;
+  align-self: stretch;
+}
+#about-defense .crisis-img {
   object-fit: cover;
   object-position: center top;
   background: none;
 }
 
 /* ============================================
-   crisis・about 本文左寄せ（text-alignのみ）
+   about-defense 画像高さをテキストに合わせる
    ============================================ */
-.crisis-num { text-align: left; }
-.crisis-heading { text-align: left; }
-.crisis-text > p { text-align: left; }
-.crisis-risk-item > p { text-align: left; }
-.crisis-storage-card > p { text-align: left; }
-.about-blocks-wrap .crisis-text > p { text-align: left; }
-.about-blocks-wrap .crisis-heading { text-align: left; }
-.about-blocks-wrap .crisis-num { text-align: left; }
-.about-disclaimer { text-align: left; }
+#about-defense {
+  align-items: stretch;
+}
+#about-defense .crisis-image-wrap {
+  aspect-ratio: unset !important;
+  height: 100% !important;
+  min-height: 0;
+}
+#about-defense .crisis-img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
