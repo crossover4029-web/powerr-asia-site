@@ -1845,12 +1845,6 @@ section {
 .crisis-image-stack .crisis-image-wrap:first-child {
   border-bottom: 2px solid rgba(255,255,255,0.06);
 }
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
 
 /* テキストエリア */
 .crisis-text {
