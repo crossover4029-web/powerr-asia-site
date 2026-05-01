@@ -3315,3 +3315,17 @@ p {
     max-height: 120px !important;
   }
 }
+
+/* 記事カード画像高さ PC・スマホ両方調整 */
+.article-cover {
+  aspect-ratio: unset !important;
+  height: 120px !important;
+}
+
+@media (max-width: 640px) {
+  .article-cover,
+  .article-card .article-cover {
+    height: 90px !important;
+    max-height: 90px !important;
+  }
+}
