@@ -2414,36 +2414,31 @@ section {
 }
 
 /* ============================================
-   crisis-block グリッド比率修正＋本文左寄せ
-   画像45% : テキスト55% に変更
+   about①ブロック 個別修正
    ============================================ */
 
-/* グリッド比率を画像45:テキスト55に */
-.crisis-block {
-  grid-template-columns: 45% 55%;
+/* ②画像下空白の解消：about-taskforceは縦長画像なのでcoverに */
+#about-taskforce .crisis-image-wrap {
+  aspect-ratio: 4 / 3;
+}
+#about-taskforce .crisis-img {
+  object-fit: cover;
+  object-position: center top;
+  background: none;
 }
 
-/* altブロック（テキスト左・画像右）も同様 */
-.crisis-block--alt {
-  grid-template-columns: 55% 45%;
-  direction: ltr;
-}
-.crisis-block--alt > * {
-  direction: ltr;
-}
-
-/* テキストエリアのpadding調整 */
-.crisis-text {
-  padding: 36px 36px 36px 32px;
+/* ①一帯一路との違い文をカード化（紺背景＋金テキスト） */
+#about-taskforce .crisis-text > p:last-of-type {
+  background: var(--c-navy, #1a2d4f);
+  color: #e8dcc8;
+  border-left: 4px solid var(--c-gold, #b89248);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-top: 1.2rem;
+  line-height: 1.8;
+  font-size: 0.93rem;
 }
 
-/* 本文・見出しを左寄せ（text-alignのみ） */
-.crisis-num { text-align: left; }
-.crisis-heading { text-align: left; }
-.crisis-text > p { text-align: left; }
-.crisis-risk-item > p { text-align: left; }
-.crisis-storage-card > p { text-align: left; }
-.about-blocks-wrap .crisis-text > p { text-align: left; }
-.about-blocks-wrap .crisis-heading { text-align: left; }
-.about-blocks-wrap .crisis-num { text-align: left; }
-.about-disclaimer { text-align: left; }
+#about-taskforce .crisis-text > p:last-of-type strong {
+  color: var(--c-gold, #b89248);
+}
