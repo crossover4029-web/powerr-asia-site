@@ -2412,3 +2412,39 @@ section {
 .editorial-note strong {
   color: var(--c-navy);
 }
+
+/* ============================================
+   本文左寄せ override（2025-05追加）
+   見出し・数字・アイコンは中央寄せ維持
+   本文の段落・説明文は左寄せ
+   ============================================ */
+
+/* crisis本文p */
+.crisis-text > p,
+.crisis-text > .crisis-lead {
+  text-align: left;
+}
+
+/* リスクカードの説明文（strongの下のspan・p）*/
+.crisis-risk-item p,
+.crisis-risk-item span:not(.risk-icon) {
+  text-align: left;
+}
+
+/* 備蓄カードの説明文 */
+.crisis-storage-card p,
+.crisis-storage-card span:not(.storage-flag) {
+  text-align: left;
+}
+
+/* aboutブロックの本文 */
+.about-body > p,
+.about-body > ul li,
+.crisis-block .crisis-text > p {
+  text-align: left;
+}
+
+/* disclaimer・注釈 */
+.about-disclaimer {
+  text-align: left;
+}
