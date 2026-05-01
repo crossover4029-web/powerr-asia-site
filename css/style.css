@@ -46,8 +46,8 @@ body {
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.02em;
   /* 日本語の自然な改行（対応ブラウザでフレーズ単位で折り返し) */
-  word-break: auto-phrase;
-  line-break: strict;
+  word-break: normal;
+  line-break: auto;
   overflow-wrap: break-word;
 }
 
@@ -835,8 +835,8 @@ section {
   max-width: 720px;
   margin-bottom: 56px;
   /* 日本語の改行を自然に */
-  word-break: auto-phrase;
-  line-break: strict;
+  word-break: normal;
+  line-break: auto;
   overflow-wrap: break-word;
 }
 
@@ -1804,7 +1804,7 @@ section {
   background: rgba(0,0,0,0.65);
   color: #e8dcc8;
   font-size: 0.7rem;
-  font-family: var(--f-sans);
+  font-family: var(--font-sans);
   padding: 3px 7px;
   border-radius: 3px;
   border: 1px solid rgba(200,170,100,0.3);
@@ -1861,7 +1861,7 @@ section {
 }
 
 .crisis-num {
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   font-size: 2.4rem;
   color: var(--c-gold);
   opacity: 0.4;
@@ -1871,7 +1871,7 @@ section {
 }
 
 .crisis-heading {
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   color: var(--c-navy);
   line-height: 1.5;
@@ -1919,7 +1919,7 @@ section {
   font-size: 1rem;
   font-weight: 700;
   color: var(--c-navy);
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
 }
 
 .crisis-risk-item p {
@@ -1973,7 +1973,7 @@ section {
 }
 
 .storage-days {
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--c-navy);
@@ -2028,7 +2028,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--c-gold);
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(200,170,100,0.25);
@@ -2057,7 +2057,7 @@ section {
 }
 
 .bridge-text {
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   font-size: clamp(1rem, 2vw, 1.3rem);
   color: var(--c-text-2);
   margin-bottom: 0.8rem;
@@ -2194,13 +2194,13 @@ section {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   color: #cc2222;
-  font-family: var(--f-sans);
+  font-family: var(--font-sans);
   margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 .cnb-title {
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   font-size: clamp(2.4rem, 6vw, 4.5rem);
   color: #fff;
   line-height: 1.2;
@@ -2209,7 +2209,7 @@ section {
 }
 
 .cnb-subtitle {
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   color: #cc2222;
   font-weight: 700;
@@ -2231,7 +2231,7 @@ section {
   gap: 14px;
   color: #e8dcc8;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
-  font-family: var(--f-sans);
+  font-family: var(--font-sans);
 }
 
 .cnb-num {
@@ -2249,7 +2249,7 @@ section {
 }
 
 .cnb-hook {
-  font-family: var(--f-serif);
+  font-family: var(--font-serif);
   font-size: clamp(0.95rem, 2vw, 1.15rem);
   color: rgba(232,220,200,0.75);
   line-height: 2;
@@ -2260,7 +2260,7 @@ section {
   display: inline-block;
   background: #cc2222;
   color: #fff;
-  font-family: var(--f-sans);
+  font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 700;
   padding: 16px 40px;
@@ -2395,7 +2395,7 @@ section {
   letter-spacing: 0.08em;
   color: var(--c-gold);
   margin-bottom: 8px;
-  font-family: var(--f-sans);
+  font-family: var(--font-sans);
 }
 
 .editorial-note--light .editorial-note-label {
@@ -2431,7 +2431,7 @@ section {
   background: rgba(184, 146, 72, 0.1);
   border: 1px solid rgba(184, 146, 72, 0.35);
   border-radius: 3px; padding: 2px 8px; margin-bottom: 10px;
-  font-family: var(--f-sans);
+  font-family: var(--font-sans);
 }
 .author-analysis p { font-size: 0.9rem; line-height: 1.85; color: var(--c-text-2); margin: 0; text-align: left !important; }
 .author-analysis p strong { color: var(--c-navy, #1a2d4f); }
@@ -2442,7 +2442,7 @@ section {
 .crisis-blocks-wrap .crisis-text { padding: 32px 28px !important; }
 
 .bridge-text--lead {
-  font-family: var(--f-serif); font-size: clamp(1rem, 2vw, 1.4rem);
+  font-family: var(--font-serif); font-size: clamp(1rem, 2vw, 1.4rem);
   color: var(--c-text-2); margin-bottom: 0.3rem; line-height: 1.4;
 }
 .bridge-text--large {
@@ -2649,5 +2649,465 @@ section {
     white-space: normal;
     max-width: 80px;
     font-size: 0.58rem;
+  }
+}
+
+/* bridge-text--date: 日付補足テキスト */
+.bridge-text--date {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  color: var(--c-gold, #b89248);
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+  margin-top: 0.6rem;
+}
+
+/* ============================================
+   hook-cta-block：統計グリッド下のnote誘導CTA
+   ============================================ */
+.hook-cta-block {
+  text-align: center;
+  margin-top: 64px;
+  padding-top: 56px;
+  border-top: 1px solid rgba(184,146,72,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hook-cta-heading--main {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hook-cta-heading--sub {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--c-gold, #b89248);
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.hook-cta-block .btn {
+  margin-top: 8px;
+  font-size: 1rem;
+  padding: 14px 36px;
+}
+
+.hook-cta-note {
+  font-size: 0.88rem;
+  color: var(--c-text-3, #8b94a8);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .hook-cta-block {
+    margin-top: 48px;
+    padding-top: 40px;
+    gap: 14px;
+  }
+  .hook-cta-heading--main {
+    font-size: 1.8rem;
+  }
+  .hook-cta-heading--sub {
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================
+   why-cta-block：8テーマ下のnote誘導
+   ============================================ */
+.why-cta-block {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--c-line, rgba(0,0,0,0.08));
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.why-cta-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--c-text-1);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  max-width: 640px;
+  margin: 0;
+}
+
+.why-cta-text strong {
+  color: var(--c-navy, #1a2d4f);
+}
+
+@media (max-width: 640px) {
+  .why-cta-block {
+    margin-top: 40px;
+    padding-top: 36px;
+    gap: 16px;
+  }
+  .why-cta-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================
+   compare-cta-block：一帯一路比較セクション下CTA
+   ============================================ */
+.compare-cta-block {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(184,146,72,0.25);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.compare-cta-upper {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: #e8dcc8;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.compare-cta-lower {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--c-gold, #b89248);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.compare-cta-block .btn {
+  margin: 4px 0;
+}
+
+@media (max-width: 640px) {
+  .compare-cta-block {
+    margin-top: 40px;
+    padding-top: 36px;
+    gap: 16px;
+  }
+  .compare-cta-upper,
+  .compare-cta-lower {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================
+   日本株セクション 強化版カードグリッド
+   ============================================ */
+.stocks-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stocks-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: var(--c-paper);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius-card);
+  padding: 24px 22px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.stocks-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s ease;
+}
+
+.stocks-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(13, 29, 58, 0.09);
+  border-color: var(--c-gold-soft);
+}
+
+.stocks-card:hover::before {
+  transform: scaleY(1);
+}
+
+.stocks-card-icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stocks-card-inner {
+  flex: 1;
+  min-width: 0;
+}
+
+.stocks-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.stocks-card-name {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-navy);
+  letter-spacing: 0.04em;
+}
+
+.stocks-card-en {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--c-text-3);
+  letter-spacing: 0.15em;
+  font-style: italic;
+}
+
+.stocks-card-desc {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--c-text-2);
+  margin-bottom: 10px;
+}
+
+.stocks-card-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+  color: var(--c-gold);
+  border: 1px solid rgba(184, 146, 72, 0.4);
+  border-radius: 2px;
+  padding: 2px 9px;
+  background: rgba(184, 146, 72, 0.06);
+}
+
+/* 注目度インジケーター付きセクションヘッダー */
+.stocks-intro-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.stocks-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--c-navy);
+  color: var(--c-gold-soft);
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  padding: 8px 18px;
+  border-radius: 2px;
+}
+
+.stocks-count-badge strong {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--c-gold);
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .stocks-card-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .stocks-card {
+    padding: 18px 16px;
+    gap: 14px;
+  }
+  .stocks-card-icon {
+    font-size: 24px;
+  }
+}
+
+/* ============================================
+   スマホ最適化 フォントサイズ底上げ
+   body=16px基準で最低14px確保
+   ============================================ */
+
+/* --- crisis本文 --- */
+.crisis-text p {
+  font-size: 1rem !important;        /* 16px (旧0.92=14.7px) */
+  line-height: 2 !important;
+}
+
+.crisis-risk-item p {
+  font-size: 0.9375rem !important;   /* 15px (旧0.86=13.8px) */
+  line-height: 1.85 !important;
+}
+
+.crisis-heading {
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem) !important;
+}
+
+/* --- 備蓄グリッド --- */
+.storage-country {
+  font-size: 0.875rem;               /* 14px (旧0.8=12.8px) */
+}
+
+.storage-days {
+  font-size: 1.6rem;
+}
+
+.storage-note {
+  font-size: 0.75rem;                /* 12px (旧0.7=11.2px) */
+  line-height: 1.6;
+}
+
+.crisis-storage-source {
+  font-size: 0.8125rem;              /* 13px (旧0.75=12px) */
+  line-height: 1.75;
+}
+
+/* --- NOTE誘導ブリッジ系 --- */
+.cnb-date {
+  font-size: 0.875rem;               /* 14px (旧0.8=12.8px) */
+}
+
+.cnb-num {
+  font-size: 0.9375rem;              /* 15px (旧0.85=13.6px) */
+}
+
+.cnb-hook {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);  /* 最小16px (旧最小0.95=15.2px) */
+  line-height: 2.1;
+}
+
+/* --- about系 --- */
+.about-note-cta {
+  font-size: 0.9375rem;              /* 15px (旧0.88=14.1px) */
+  line-height: 1.85;
+}
+
+.about-disclaimer {
+  font-size: 0.8125rem !important;   /* 13px (旧0.78=12.5px) */
+  line-height: 1.85 !important;
+}
+
+/* --- editorial note --- */
+.editorial-note p {
+  font-size: 0.9375rem;              /* 15px (旧0.85=13.6px) */
+  line-height: 1.85;
+}
+
+.editorial-note-label {
+  font-size: 0.8125rem;              /* 13px (旧0.78=12.5px) */
+}
+
+/* --- 筆者分析ボックス --- */
+.author-analysis p {
+  font-size: 0.9375rem !important;   /* 15px (旧0.9=14.4px) */
+  line-height: 1.9 !important;
+}
+
+.author-analysis__label {
+  font-size: 0.75rem !important;     /* 12px (旧0.72=11.5px) */
+}
+
+/* --- key-card / oda-card-highlight --- */
+.key-card,
+.oda-card-highlight {
+  font-size: 1rem !important;        /* 16px (旧0.93=14.9px) */
+  line-height: 1.85 !important;
+  padding: 20px 22px !important;
+}
+
+/* --- hook-cta-note --- */
+.hook-cta-note {
+  font-size: 0.9375rem;              /* 15px (旧0.88=14.1px) */
+  line-height: 2;
+}
+
+/* --- why-cta / compare-cta --- */
+.why-cta-text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.compare-cta-upper {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+}
+
+.compare-cta-lower {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+}
+
+/* --- crisis-note-text --- */
+.crisis-note-text {
+  font-size: 0.9375rem !important;   /* 15px */
+}
+
+/* --- スマホ専用 追加調整 --- */
+@media (max-width: 640px) {
+  .crisis-text p {
+    font-size: 1rem !important;
+    line-height: 2 !important;
+  }
+
+  .crisis-risk-item p {
+    font-size: 0.9375rem !important;
+  }
+
+  .key-card,
+  .oda-card-highlight {
+    font-size: 1rem !important;
+    padding: 18px 18px !important;
+  }
+
+  .cnb-hook {
+    font-size: 1rem !important;
+    line-height: 2 !important;
+  }
+
+  .editorial-note p {
+    font-size: 0.9375rem !important;
+  }
+
+  .author-analysis p {
+    font-size: 0.9375rem !important;
+  }
+
+  /* タッチ操作のため行間を広めに */
+  .crisis-text {
+    line-height: 1.9;
+  }
+
+  .about-note-cta {
+    font-size: 1rem !important;
   }
 }
