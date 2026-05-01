@@ -2414,23 +2414,35 @@ section {
 }
 
 /* ============================================
-   本文左寄せ（text-alignのみ・レイアウト非破壊）
+   crisis-block グリッド比率修正＋本文左寄せ
+   画像45% : テキスト55% に変更
    ============================================ */
 
-/* crisis本文・見出しを左寄せ */
+/* グリッド比率を画像45:テキスト55に */
+.crisis-block {
+  grid-template-columns: 45% 55%;
+}
+
+/* altブロック（テキスト左・画像右）も同様 */
+.crisis-block--alt {
+  grid-template-columns: 55% 45%;
+  direction: ltr;
+}
+.crisis-block--alt > * {
+  direction: ltr;
+}
+
+/* テキストエリアのpadding調整 */
+.crisis-text {
+  padding: 36px 36px 36px 32px;
+}
+
+/* 本文・見出しを左寄せ（text-alignのみ） */
 .crisis-num { text-align: left; }
 .crisis-heading { text-align: left; }
 .crisis-text > p { text-align: left; }
-.crisis-text > strong { text-align: left; }
-
-/* リスクアイテムの説明テキストのみ左寄せ（アイコン配置は維持） */
 .crisis-risk-item > p { text-align: left; }
-.crisis-risk-item > span.risk-label { text-align: left; }
-
-/* 備蓄カードの説明文 */
 .crisis-storage-card > p { text-align: left; }
-
-/* aboutブロック本文 */
 .about-blocks-wrap .crisis-text > p { text-align: left; }
 .about-blocks-wrap .crisis-heading { text-align: left; }
 .about-blocks-wrap .crisis-num { text-align: left; }
