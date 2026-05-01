@@ -2599,3 +2599,55 @@ section {
   width: 100%;
   height: 100%;
 }
+
+/* ============================================
+   crisis テキスト左見切れ修正
+   画像44%・テキスト56%レイアウトでの左padding確保
+   ============================================ */
+#crisis-hormuz .crisis-text,
+#crisis-storage .crisis-text {
+  padding-left: 36px !important;
+}
+
+#crisis-malacca .crisis-text,
+#crisis-debt .crisis-text {
+  padding-right: 36px !important;
+}
+
+/* ============================================
+   Edge / Safari 互換・スマホ表示修正
+   ============================================ */
+
+/* backdrop-filter に -webkit- プレフィックスを補完 */
+.site-header {
+  -webkit-backdrop-filter: blur(8px);
+}
+.hook-finance-label {
+  -webkit-backdrop-filter: blur(10px);
+}
+.hook-finance-image {
+  -webkit-backdrop-filter: blur(6px);
+}
+.why-card {
+  -webkit-backdrop-filter: blur(4px);
+}
+.video-placeholder {
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* bridge-text--large: スマホで改行を許可（横スクロール防止） */
+@media (max-width: 640px) {
+  .bridge-text--large {
+    white-space: normal;
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}
+
+/* map-label: スマホで文字が画像外にはみ出さないよう制御 */
+@media (max-width: 640px) {
+  .map-label {
+    white-space: normal;
+    max-width: 80px;
+    font-size: 0.58rem;
+  }
+}
