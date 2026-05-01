@@ -2414,28 +2414,24 @@ section {
 }
 
 /* ============================================
-   crisis-text 全体左寄せに統一（2025-05修正）
-   見出し・番号・本文すべて左基準
+   本文左寄せ（text-alignのみ・レイアウト非破壊）
    ============================================ */
-.crisis-text,
-.crisis-text p,
-.crisis-text strong,
-.crisis-heading,
-.crisis-num,
-.crisis-risk-item,
-.crisis-risk-item p,
-.crisis-risk-item span,
-.crisis-storage-card,
-.crisis-storage-card p,
-.about-blocks-wrap .crisis-text,
-.about-blocks-wrap .crisis-text p,
-.about-blocks-wrap .crisis-heading,
-.about-disclaimer {
-  text-align: left !important;
-  align-items: flex-start !important;
-}
 
-/* crisis > container の中央寄せは維持（セクションタイトル用） */
-.crisis > .container {
-  text-align: center;
-}
+/* crisis本文・見出しを左寄せ */
+.crisis-num { text-align: left; }
+.crisis-heading { text-align: left; }
+.crisis-text > p { text-align: left; }
+.crisis-text > strong { text-align: left; }
+
+/* リスクアイテムの説明テキストのみ左寄せ（アイコン配置は維持） */
+.crisis-risk-item > p { text-align: left; }
+.crisis-risk-item > span.risk-label { text-align: left; }
+
+/* 備蓄カードの説明文 */
+.crisis-storage-card > p { text-align: left; }
+
+/* aboutブロック本文 */
+.about-blocks-wrap .crisis-text > p { text-align: left; }
+.about-blocks-wrap .crisis-heading { text-align: left; }
+.about-blocks-wrap .crisis-num { text-align: left; }
+.about-disclaimer { text-align: left; }
