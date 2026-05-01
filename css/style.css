@@ -3111,3 +3111,63 @@ section {
     font-size: 1rem !important;
   }
 }
+
+/* ============================================
+   備蓄グリッド スマホ完全修正
+   ============================================ */
+
+/* 480px以下：1カラムに変更 */
+@media (max-width: 480px) {
+  .crisis-storage-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .crisis-storage-card {
+    padding: 12px 10px !important;
+  }
+
+  .storage-days {
+    font-size: 1.4rem !important;
+  }
+
+  .storage-country {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* 375px以下（iPhone SE等）：完全1カラム */
+@media (max-width: 375px) {
+  .crisis-storage-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* crisis-block内のテキスト列が狭すぎる問題を修正 */
+/* スマホでは1カラムに強制 */
+@media (max-width: 900px) {
+  #crisis-hormuz,
+  #crisis-malacca,
+  #crisis-storage,
+  #crisis-debt {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* crisis-textのmin-widthを保証 */
+.crisis-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* テキスト縦並びバグの完全対策（word-break: auto-phraseを上書き） */
+body,
+.crisis-text p,
+.crisis-text,
+.section-lead,
+p {
+  word-break: normal !important;
+  line-break: auto !important;
+  overflow-wrap: break-word;
+}
