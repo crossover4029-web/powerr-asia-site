@@ -2312,14 +2312,16 @@ section {
   .about-blocks-wrap { gap: 20px; padding-bottom: 40px; }
 }
 
-/* about専用ブロックレイアウト */
-.about-blocks-wrap .crisis-block {
-  grid-template-columns: 45% 55%;
-  align-items: start;
-}
+/* about専用ブロックレイアウト — PC(901px以上)のみ */
+@media (min-width: 901px) {
+  .about-blocks-wrap .crisis-block {
+    grid-template-columns: 45% 55%;
+    align-items: start;
+  }
 
-.about-blocks-wrap .crisis-block--alt {
-  grid-template-columns: 55% 45%;
+  .about-blocks-wrap .crisis-block--alt {
+    grid-template-columns: 55% 45%;
+  }
 }
 
 .about-blocks-wrap .crisis-image-wrap {
@@ -3445,5 +3447,82 @@ html, body {
   .crisis-blocks-wrap .crisis-text,
   .about-blocks-wrap .crisis-text {
     padding: 20px 14px !important;
+  }
+}
+
+/* ============================================
+   ★ スマホ最終確定ルール（全競合を上書き）
+   これより上の全設定を上書きする最終ルール
+   ============================================ */
+@media (max-width: 900px) {
+
+  /* crisis・about 全ブロック強制1カラム */
+  .crisis-block,
+  .crisis-block--alt,
+  .crisis-blocks-wrap .crisis-block,
+  .crisis-blocks-wrap .crisis-block--alt,
+  .about-blocks-wrap .crisis-block,
+  .about-blocks-wrap .crisis-block--alt,
+  #crisis-hormuz, #crisis-malacca,
+  #crisis-storage, #crisis-debt,
+  #about-taskforce, #about-finance1,
+  #about-storage, #about-oda,
+  #about-clause, #about-fund,
+  #about-defense, #about-patrol {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+    width: 100% !important;
+  }
+
+  /* 全テキストエリアを全幅に */
+  .crisis-text,
+  .crisis-blocks-wrap .crisis-text,
+  .about-blocks-wrap .crisis-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 画像エリアを全幅に */
+  .crisis-image-wrap,
+  .crisis-image-stack,
+  .about-blocks-wrap .crisis-image-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    max-height: 250px !important;
+  }
+
+  /* テキスト全体の見切れ防止 */
+  .crisis-text *,
+  .about-blocks-wrap .crisis-text * {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* 中央寄せを左寄せに */
+  .crisis-text p,
+  .crisis-text p[style] {
+    text-align: left !important;
+  }
+
+  /* 備蓄グリッド */
+  .crisis-storage-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .crisis-text,
+  .crisis-blocks-wrap .crisis-text,
+  .about-blocks-wrap .crisis-text {
+    padding: 18px 14px !important;
+  }
+
+  .crisis-image-wrap,
+  .crisis-image-stack {
+    max-height: 200px !important;
   }
 }
