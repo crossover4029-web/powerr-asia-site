@@ -2414,37 +2414,28 @@ section {
 }
 
 /* ============================================
-   本文左寄せ override（2025-05追加）
-   見出し・数字・アイコンは中央寄せ維持
-   本文の段落・説明文は左寄せ
+   crisis-text 全体左寄せに統一（2025-05修正）
+   見出し・番号・本文すべて左基準
    ============================================ */
-
-/* crisis本文p */
-.crisis-text > p,
-.crisis-text > .crisis-lead {
-  text-align: left;
-}
-
-/* リスクカードの説明文（strongの下のspan・p）*/
+.crisis-text,
+.crisis-text p,
+.crisis-text strong,
+.crisis-heading,
+.crisis-num,
+.crisis-risk-item,
 .crisis-risk-item p,
-.crisis-risk-item span:not(.risk-icon) {
-  text-align: left;
-}
-
-/* 備蓄カードの説明文 */
+.crisis-risk-item span,
+.crisis-storage-card,
 .crisis-storage-card p,
-.crisis-storage-card span:not(.storage-flag) {
-  text-align: left;
-}
-
-/* aboutブロックの本文 */
-.about-body > p,
-.about-body > ul li,
-.crisis-block .crisis-text > p {
-  text-align: left;
-}
-
-/* disclaimer・注釈 */
+.about-blocks-wrap .crisis-text,
+.about-blocks-wrap .crisis-text p,
+.about-blocks-wrap .crisis-heading,
 .about-disclaimer {
-  text-align: left;
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+/* crisis > container の中央寄せは維持（セクションタイトル用） */
+.crisis > .container {
+  text-align: center;
 }
