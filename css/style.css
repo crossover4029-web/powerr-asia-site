@@ -3343,3 +3343,33 @@ p {
     max-height: 60px !important;
   }
 }
+
+/* ============================================
+   crisis-debt スマホ テキスト見切れ修正
+   中央寄せ→左寄せに変更
+   ============================================ */
+@media (max-width: 900px) {
+  #crisis-debt .crisis-text p,
+  #crisis-debt .crisis-text p[style],
+  .crisis-debt-case p,
+  .crisis-debt-box p {
+    text-align: left !important;
+  }
+
+  .crisis-debt-case {
+    padding: 16px 18px !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .crisis-debt-box {
+    overflow: hidden;
+  }
+
+  /* bri-badge も左寄せに */
+  #crisis-debt .bri-badge {
+    display: block;
+    margin: 8px 0 4px !important;
+    text-align: center;
+  }
+}
