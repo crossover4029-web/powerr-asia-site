@@ -3227,3 +3227,69 @@ p {
     padding: 20px 16px !important;
   }
 }
+
+/* ============================================
+   about-blocks スマホ完全1カラム化（最終版）
+   ID指定の !important を900px以下で強制上書き
+   ============================================ */
+@media (max-width: 900px) {
+  .about-blocks-wrap .crisis-block,
+  .about-blocks-wrap .crisis-block--alt,
+  #about-taskforce,
+  #about-finance1,
+  #about-storage,
+  #about-oda,
+  #about-clause,
+  #about-fund,
+  #about-defense,
+  #about-patrol {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+  }
+
+  .about-blocks-wrap .crisis-block--alt > *,
+  #about-patrol > *,
+  #about-defense > * {
+    direction: ltr !important;
+  }
+
+  .about-blocks-wrap .crisis-image-wrap,
+  #about-patrol .crisis-image-stack,
+  #about-patrol .crisis-image-stack .crisis-image-wrap {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 260px !important;
+    width: 100% !important;
+  }
+
+  #about-defense .crisis-image-wrap {
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    max-height: 260px !important;
+  }
+
+  .about-blocks-wrap .crisis-text {
+    padding: 24px 20px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-blocks-wrap .crisis-image-wrap,
+  #about-patrol .crisis-image-stack {
+    max-height: 200px !important;
+  }
+
+  .about-blocks-wrap .crisis-text {
+    padding: 20px 16px !important;
+  }
+}
+
+/* ============================================
+   記事カード スマホ画像高さ制限
+   ============================================ */
+@media (max-width: 640px) {
+  .article-cover {
+    aspect-ratio: unset !important;
+    height: 160px !important;
+  }
+}
