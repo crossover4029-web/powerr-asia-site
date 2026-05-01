@@ -2819,686 +2819,129 @@ section {
 }
 
 /* ============================================
-   日本株セクション 強化版カードグリッド
-   ============================================ */
-.stocks-card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-.stocks-card {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  background: var(--c-paper);
-  border: 1px solid var(--c-line-soft);
-  border-radius: var(--radius-card);
-  padding: 24px 22px;
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-  position: relative;
-  overflow: hidden;
-}
-
-.stocks-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px; height: 100%;
-  background: linear-gradient(180deg, var(--c-gold), transparent);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.35s ease;
-}
-
-.stocks-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(13, 29, 58, 0.09);
-  border-color: var(--c-gold-soft);
-}
-
-.stocks-card:hover::before {
-  transform: scaleY(1);
-}
-
-.stocks-card-icon {
-  font-size: 28px;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.stocks-card-inner {
-  flex: 1;
-  min-width: 0;
-}
-
-.stocks-card-head {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 8px;
-  flex-wrap: wrap;
-}
-
-.stocks-card-name {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--c-navy);
-  letter-spacing: 0.04em;
-}
-
-.stocks-card-en {
-  font-family: var(--font-display);
-  font-size: 11px;
-  color: var(--c-text-3);
-  letter-spacing: 0.15em;
-  font-style: italic;
-}
-
-.stocks-card-desc {
-  font-size: 13.5px;
-  line-height: 1.85;
-  color: var(--c-text-2);
-  margin-bottom: 10px;
-}
-
-.stocks-card-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-family: var(--font-serif);
-  letter-spacing: 0.08em;
-  color: var(--c-gold);
-  border: 1px solid rgba(184, 146, 72, 0.4);
-  border-radius: 2px;
-  padding: 2px 9px;
-  background: rgba(184, 146, 72, 0.06);
-}
-
-/* 注目度インジケーター付きセクションヘッダー */
-.stocks-intro-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.stocks-count-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--c-navy);
-  color: var(--c-gold-soft);
-  font-family: var(--font-serif);
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  padding: 8px 18px;
-  border-radius: 2px;
-}
-
-.stocks-count-badge strong {
-  font-family: var(--font-display);
-  font-size: 22px;
-  color: var(--c-gold);
-  font-style: italic;
-}
-
-@media (max-width: 900px) {
-  .stocks-card-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-}
-
-@media (max-width: 640px) {
-  .stocks-card {
-    padding: 18px 16px;
-    gap: 14px;
-  }
-  .stocks-card-icon {
-    font-size: 24px;
-  }
-}
-
-/* ============================================
-   スマホ最適化 フォントサイズ底上げ
-   body=16px基準で最低14px確保
+   POWERR Asia Lab — スマホ最適化（統合版）
+   追記日: 2026/05/01
+   対象: 390px幅（iPhone 14相当）基準
    ============================================ */
 
-/* --- crisis本文 --- */
-.crisis-text p {
-  font-size: 1rem !important;        /* 16px (旧0.92=14.7px) */
-  line-height: 2 !important;
+/* ------------------------------------------
+   1. サイト全体の横スクロール防止
+   ------------------------------------------ */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
-.crisis-risk-item p {
-  font-size: 0.9375rem !important;   /* 15px (旧0.86=13.8px) */
-  line-height: 1.85 !important;
+/* ------------------------------------------
+   2. 全要素の幅超過防止
+   ------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-.crisis-heading {
-  font-size: clamp(1.1rem, 2.4vw, 1.6rem) !important;
+img, video, iframe {
+  max-width: 100%;
 }
 
-/* --- 備蓄グリッド --- */
-.storage-country {
-  font-size: 0.875rem;               /* 14px (旧0.8=12.8px) */
-}
-
-.storage-days {
-  font-size: 1.6rem;
-}
-
-.storage-note {
-  font-size: 0.75rem;                /* 12px (旧0.7=11.2px) */
-  line-height: 1.6;
-}
-
-.crisis-storage-source {
-  font-size: 0.8125rem;              /* 13px (旧0.75=12px) */
-  line-height: 1.75;
-}
-
-/* --- NOTE誘導ブリッジ系 --- */
-.cnb-date {
-  font-size: 0.875rem;               /* 14px (旧0.8=12.8px) */
-}
-
-.cnb-num {
-  font-size: 0.9375rem;              /* 15px (旧0.85=13.6px) */
-}
-
-.cnb-hook {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);  /* 最小16px (旧最小0.95=15.2px) */
-  line-height: 2.1;
-}
-
-/* --- about系 --- */
-.about-note-cta {
-  font-size: 0.9375rem;              /* 15px (旧0.88=14.1px) */
-  line-height: 1.85;
-}
-
-.about-disclaimer {
-  font-size: 0.8125rem !important;   /* 13px (旧0.78=12.5px) */
-  line-height: 1.85 !important;
-}
-
-/* --- editorial note --- */
-.editorial-note p {
-  font-size: 0.9375rem;              /* 15px (旧0.85=13.6px) */
-  line-height: 1.85;
-}
-
-.editorial-note-label {
-  font-size: 0.8125rem;              /* 13px (旧0.78=12.5px) */
-}
-
-/* --- 筆者分析ボックス --- */
-.author-analysis p {
-  font-size: 0.9375rem !important;   /* 15px (旧0.9=14.4px) */
-  line-height: 1.9 !important;
-}
-
-.author-analysis__label {
-  font-size: 0.75rem !important;     /* 12px (旧0.72=11.5px) */
-}
-
-/* --- key-card / oda-card-highlight --- */
+/* ------------------------------------------
+   3. フォントサイズ底上げ（スマホ body=16px基準）
+   ------------------------------------------ */
+.crisis-text p        { font-size: 1rem !important; line-height: 2 !important; }
+.crisis-risk-item p   { font-size: 0.9375rem !important; line-height: 1.85 !important; }
 .key-card,
-.oda-card-highlight {
-  font-size: 1rem !important;        /* 16px (旧0.93=14.9px) */
-  line-height: 1.85 !important;
-  padding: 20px 22px !important;
-}
+.oda-card-highlight   { font-size: 1rem !important; line-height: 1.85 !important; padding: 20px 22px !important; }
+.author-analysis p    { font-size: 0.9375rem !important; line-height: 1.9 !important; }
+.editorial-note p     { font-size: 0.9375rem; line-height: 1.85; }
+.about-note-cta       { font-size: 0.9375rem; line-height: 1.85; }
+.hook-cta-note        { font-size: 0.9375rem; line-height: 2; }
+.cnb-hook             { font-size: clamp(1rem, 2.2vw, 1.2rem); line-height: 2.1; }
+.storage-country      { font-size: 0.875rem; }
+.storage-note         { font-size: 0.75rem; line-height: 1.6; }
+.crisis-storage-source{ font-size: 0.8125rem; line-height: 1.75; }
+.cnb-date             { font-size: 0.875rem; }
+.about-disclaimer     { font-size: 0.8125rem !important; line-height: 1.85 !important; }
 
-/* --- hook-cta-note --- */
-.hook-cta-note {
-  font-size: 0.9375rem;              /* 15px (旧0.88=14.1px) */
-  line-height: 2;
-}
+/* ------------------------------------------
+   4. CSS変数ミスマッチ修正（--f-serif → --font-serif）
+      ※sed で既に修正済みのため念のため記載のみ
+   ------------------------------------------ */
 
-/* --- why-cta / compare-cta --- */
-.why-cta-text {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-
-.compare-cta-upper {
-  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-}
-
-.compare-cta-lower {
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-}
-
-/* --- crisis-note-text --- */
-.crisis-note-text {
-  font-size: 0.9375rem !important;   /* 15px */
-}
-
-/* --- スマホ専用 追加調整 --- */
-@media (max-width: 640px) {
-  .crisis-text p {
-    font-size: 1rem !important;
-    line-height: 2 !important;
-  }
-
-  .crisis-risk-item p {
-    font-size: 0.9375rem !important;
-  }
-
-  .key-card,
-  .oda-card-highlight {
-    font-size: 1rem !important;
-    padding: 18px 18px !important;
-  }
-
-  .cnb-hook {
-    font-size: 1rem !important;
-    line-height: 2 !important;
-  }
-
-  .editorial-note p {
-    font-size: 0.9375rem !important;
-  }
-
-  .author-analysis p {
-    font-size: 0.9375rem !important;
-  }
-
-  /* タッチ操作のため行間を広めに */
-  .crisis-text {
-    line-height: 1.9;
-  }
-
-  .about-note-cta {
-    font-size: 1rem !important;
-  }
-}
-
-/* ============================================
-   備蓄グリッド スマホ完全修正
-   ============================================ */
-
-/* 480px以下：1カラムに変更 */
-@media (max-width: 480px) {
-  .crisis-storage-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
-  }
-
-  .crisis-storage-card {
-    padding: 12px 10px !important;
-  }
-
-  .storage-days {
-    font-size: 1.4rem !important;
-  }
-
-  .storage-country {
-    font-size: 0.8rem !important;
-  }
-}
-
-/* 375px以下（iPhone SE等）：完全1カラム */
-@media (max-width: 375px) {
-  .crisis-storage-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* crisis-block内のテキスト列が狭すぎる問題を修正 */
-/* スマホでは1カラムに強制 */
-@media (max-width: 900px) {
-  #crisis-hormuz,
-  #crisis-malacca,
-  #crisis-storage,
-  #crisis-debt {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* crisis-textのmin-widthを保証 */
-.crisis-text {
-  min-width: 0;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-/* テキスト縦並びバグの完全対策（word-break: auto-phraseを上書き） */
-body,
-.crisis-text p,
-.crisis-text,
-.section-lead,
-p {
+/* ------------------------------------------
+   5. word-break: auto-phrase 無効化（縦1文字バグ対策）
+   ------------------------------------------ */
+body, p, .crisis-text, .section-lead {
   word-break: normal !important;
   line-break: auto !important;
   overflow-wrap: break-word;
 }
 
-/* ============================================
-   crisis-block スマホ完全1カラム化（最終版）
-   既存の全グリッド指定を上書き
-   ============================================ */
+/* ------------------------------------------
+   6. crisis-block / about-block PC用グリッド（901px以上）
+   ------------------------------------------ */
+@media (min-width: 901px) {
+  #crisis-hormuz, #crisis-storage  { grid-template-columns: 44% 56% !important; }
+  #crisis-malacca, #crisis-debt    { grid-template-columns: 56% 44% !important; }
+  .crisis-blocks-wrap .crisis-text { padding: 32px 28px !important; }
+
+  .about-blocks-wrap .crisis-block     { grid-template-columns: 45% 55%; align-items: start; }
+  .about-blocks-wrap .crisis-block--alt{ grid-template-columns: 55% 45%; }
+
+  #about-patrol  { grid-template-columns: 45% 55% !important; }
+  #about-defense { align-items: stretch; }
+  #about-defense .crisis-image-wrap { aspect-ratio: unset !important; height: 100% !important; }
+}
+
+/* ------------------------------------------
+   7. スマホ（900px以下）全ブロック1カラム化
+   ------------------------------------------ */
 @media (max-width: 900px) {
+
+  /* 全crisis/aboutブロックを1カラムに */
   .crisis-block,
   .crisis-block--alt,
-  .crisis-blocks-wrap .crisis-block,
-  .crisis-blocks-wrap .crisis-block--alt,
-  #crisis-hormuz,
-  #crisis-malacca,
-  #crisis-storage,
-  #crisis-debt {
+  #crisis-hormuz, #crisis-malacca, #crisis-storage, #crisis-debt,
+  .about-blocks-wrap .crisis-block,
+  .about-blocks-wrap .crisis-block--alt,
+  #about-taskforce, #about-finance1, #about-storage, #about-oda,
+  #about-clause, #about-fund, #about-defense, #about-patrol {
     grid-template-columns: 1fr !important;
     direction: ltr !important;
   }
 
-  .crisis-block--alt > * {
-    direction: ltr !important;
-  }
+  .crisis-block--alt > *,
+  .about-blocks-wrap .crisis-block--alt > * { direction: ltr !important; }
 
+  /* 画像エリア */
   .crisis-image-wrap,
-  .crisis-image-stack {
+  .about-blocks-wrap .crisis-image-wrap {
     width: 100% !important;
-    max-height: 260px !important;
     aspect-ratio: 16 / 9 !important;
+    max-height: 260px !important;
   }
 
   .crisis-image-stack {
     flex-direction: row !important;
     max-height: 180px !important;
-  }
-
-  .crisis-text {
-    padding: 24px 20px !important;
     width: 100% !important;
   }
-}
 
-@media (max-width: 480px) {
-  .crisis-image-wrap,
-  .crisis-image-stack {
-    max-height: 200px !important;
-  }
-
-  .crisis-image-stack {
-    max-height: 140px !important;
-  }
-
-  .crisis-text {
-    padding: 20px 16px !important;
-  }
-}
-
-/* ============================================
-   about-blocks スマホ完全1カラム化（最終版）
-   ID指定の !important を900px以下で強制上書き
-   ============================================ */
-@media (max-width: 900px) {
-  .about-blocks-wrap .crisis-block,
-  .about-blocks-wrap .crisis-block--alt,
-  #about-taskforce,
-  #about-finance1,
-  #about-storage,
-  #about-oda,
-  #about-clause,
-  #about-fund,
-  #about-defense,
-  #about-patrol {
-    grid-template-columns: 1fr !important;
-    direction: ltr !important;
-  }
-
-  .about-blocks-wrap .crisis-block--alt > *,
-  #about-patrol > *,
-  #about-defense > * {
-    direction: ltr !important;
-  }
-
-  .about-blocks-wrap .crisis-image-wrap,
-  #about-patrol .crisis-image-stack,
   #about-patrol .crisis-image-stack .crisis-image-wrap {
-    aspect-ratio: 16 / 9 !important;
-    max-height: 260px !important;
-    width: 100% !important;
+    aspect-ratio: 4 / 3 !important;
   }
 
-  #about-defense .crisis-image-wrap {
-    aspect-ratio: 16 / 9 !important;
-    height: auto !important;
-    max-height: 260px !important;
-  }
-
+  /* テキストエリア */
+  .crisis-text,
+  .crisis-blocks-wrap .crisis-text,
   .about-blocks-wrap .crisis-text {
-    padding: 24px 20px !important;
     width: 100% !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-blocks-wrap .crisis-image-wrap,
-  #about-patrol .crisis-image-stack {
-    max-height: 200px !important;
-  }
-
-  .about-blocks-wrap .crisis-text {
-    padding: 20px 16px !important;
-  }
-}
-
-/* ============================================
-   記事カード スマホ画像高さ制限
-   ============================================ */
-@media (max-width: 640px) {
-  .article-cover {
-    aspect-ratio: unset !important;
-    height: 160px !important;
-  }
-}
-
-/* ============================================
-   記事カード 画像高さ強制固定（最終版）
-   ============================================ */
-@media (max-width: 640px) {
-  .article-cover,
-  .article-card .article-cover {
-    height: 160px !important;
-    max-height: 160px !important;
-    aspect-ratio: unset !important;
-    min-height: unset !important;
-  }
-}
-
-/* 記事カード画像高さ 120pxに変更 */
-@media (max-width: 640px) {
-  .article-cover,
-  .article-card .article-cover {
-    height: 120px !important;
-    max-height: 120px !important;
-  }
-}
-
-/* 記事カード画像高さ PC・スマホ両方調整 */
-.article-cover {
-  aspect-ratio: unset !important;
-  height: 120px !important;
-}
-
-@media (max-width: 640px) {
-  .article-cover,
-  .article-card .article-cover {
-    height: 90px !important;
-    max-height: 90px !important;
-  }
-}
-
-/* 記事カード画像高さ さらに縮小 */
-.article-cover {
-  height: 80px !important;
-  max-height: 80px !important;
-}
-
-@media (max-width: 640px) {
-  .article-cover,
-  .article-card .article-cover {
-    height: 60px !important;
-    max-height: 60px !important;
-  }
-}
-
-/* ============================================
-   crisis-debt スマホ テキスト見切れ修正
-   中央寄せ→左寄せに変更
-   ============================================ */
-@media (max-width: 900px) {
-  #crisis-debt .crisis-text p,
-  #crisis-debt .crisis-text p[style],
-  .crisis-debt-case p,
-  .crisis-debt-box p {
-    text-align: left !important;
-  }
-
-  .crisis-debt-case {
-    padding: 16px 18px !important;
+    max-width: 100% !important;
+    padding: 24px 18px !important;
     overflow-wrap: break-word !important;
     word-break: break-word !important;
   }
 
-  .crisis-debt-box {
-    overflow: hidden;
-  }
-
-  /* bri-badge も左寄せに */
-  #crisis-debt .bri-badge {
-    display: block;
-    margin: 8px 0 4px !important;
-    text-align: center;
-  }
-}
-
-/* ============================================
-   横スクロール・見切れ 根本対策（最終一括修正）
-   ============================================ */
-
-/* 1. サイト全体の横スクロール禁止 */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* 2. 全要素の横幅オーバー防止 */
-* {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* 3. white-space: nowrap をスマホで解除 */
-@media (max-width: 900px) {
-  .map-label {
-    white-space: normal !important;
-  }
-
-  .bridge-text--large {
-    white-space: normal !important;
-    font-size: clamp(1.8rem, 7vw, 3rem) !important;
-  }
-}
-
-/* 4. crisis-text内の全テキスト横幅制御 */
-.crisis-text,
-.crisis-text p,
-.crisis-text strong,
-.crisis-text h3,
-.crisis-debt-case,
-.crisis-debt-case p,
-.crisis-risk-item,
-.crisis-risk-item p {
-  overflow-wrap: break-word !important;
-  word-break: break-word !important;
-  max-width: 100% !important;
-}
-
-/* 5. インラインスタイルのtext-align:centerをスマホで左寄せ */
-@media (max-width: 900px) {
-  .crisis-text p,
-  .crisis-text p[style*="center"],
-  #crisis-debt .crisis-text p {
-    text-align: left !important;
-  }
-
-  .bri-badge {
-    display: inline-block !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-  }
-}
-
-/* 6. crisis-block スマホpaddingの一本化 */
-@media (max-width: 900px) {
-  .crisis-text,
-  .crisis-blocks-wrap .crisis-text,
-  .about-blocks-wrap .crisis-text {
-    padding: 24px 18px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .crisis-text,
-  .crisis-blocks-wrap .crisis-text,
-  .about-blocks-wrap .crisis-text {
-    padding: 20px 14px !important;
-  }
-}
-
-/* ============================================
-   ★ スマホ最終確定ルール（全競合を上書き）
-   これより上の全設定を上書きする最終ルール
-   ============================================ */
-@media (max-width: 900px) {
-
-  /* crisis・about 全ブロック強制1カラム */
-  .crisis-block,
-  .crisis-block--alt,
-  .crisis-blocks-wrap .crisis-block,
-  .crisis-blocks-wrap .crisis-block--alt,
-  .about-blocks-wrap .crisis-block,
-  .about-blocks-wrap .crisis-block--alt,
-  #crisis-hormuz, #crisis-malacca,
-  #crisis-storage, #crisis-debt,
-  #about-taskforce, #about-finance1,
-  #about-storage, #about-oda,
-  #about-clause, #about-fund,
-  #about-defense, #about-patrol {
-    grid-template-columns: 1fr !important;
-    direction: ltr !important;
-    width: 100% !important;
-  }
-
-  /* 全テキストエリアを全幅に */
-  .crisis-text,
-  .crisis-blocks-wrap .crisis-text,
-  .about-blocks-wrap .crisis-text {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 24px 18px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 画像エリアを全幅に */
-  .crisis-image-wrap,
-  .crisis-image-stack,
-  .about-blocks-wrap .crisis-image-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    aspect-ratio: 16 / 9 !important;
-    max-height: 250px !important;
-  }
-
-  /* テキスト全体の見切れ防止 */
+  /* テキスト内コンテンツの幅超過防止 */
   .crisis-text *,
   .about-blocks-wrap .crisis-text * {
     max-width: 100% !important;
@@ -3506,27 +2949,89 @@ html, body {
     word-break: break-word !important;
   }
 
-  /* 中央寄せを左寄せに */
+  /* 中央寄せ → 左寄せ */
   .crisis-text p,
-  .crisis-text p[style] {
-    text-align: left !important;
-  }
+  #crisis-debt .crisis-text p { text-align: left !important; }
 
   /* 備蓄グリッド */
-  .crisis-storage-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+  .crisis-storage-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* white-space: nowrap 解除 */
+  .map-label           { white-space: normal !important; }
+  .bridge-text--large  { white-space: normal !important; font-size: clamp(1.8rem, 7vw, 3rem) !important; }
+
+  /* インライン中央寄せの上書き */
+  .bri-badge { display: inline-block !important; white-space: normal !important; }
 }
 
+/* ------------------------------------------
+   8. 480px以下（小型スマホ）追加調整
+   ------------------------------------------ */
 @media (max-width: 480px) {
   .crisis-text,
   .crisis-blocks-wrap .crisis-text,
-  .about-blocks-wrap .crisis-text {
-    padding: 18px 14px !important;
-  }
+  .about-blocks-wrap .crisis-text { padding: 18px 14px !important; }
 
   .crisis-image-wrap,
-  .crisis-image-stack {
-    max-height: 200px !important;
-  }
+  .about-blocks-wrap .crisis-image-wrap { max-height: 200px !important; }
+
+  .crisis-image-stack { max-height: 140px !important; }
+
+  .crisis-storage-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+
+  .crisis-text p        { font-size: 1rem !important; }
+  .key-card,
+  .oda-card-highlight   { font-size: 1rem !important; padding: 18px 18px !important; }
 }
+
+/* ------------------------------------------
+   9. 記事カード画像高さ
+   ------------------------------------------ */
+.article-cover {
+  aspect-ratio: unset !important;
+  height: 80px !important;
+  max-height: 80px !important;
+}
+
+@media (max-width: 640px) {
+  .article-cover { height: 60px !important; max-height: 60px !important; }
+  .container     { padding: 0 16px; }
+}
+
+/* ------------------------------------------
+   10. 日本株カードグリッド
+   ------------------------------------------ */
+.stocks-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.stocks-card {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--c-paper); border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius-card); padding: 24px 22px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  position: relative; overflow: hidden;
+}
+.stocks-card::before {
+  content: ""; position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, var(--c-gold), transparent);
+  transform: scaleY(0); transform-origin: top; transition: transform 0.35s ease;
+}
+.stocks-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(13,29,58,0.09); border-color: var(--c-gold-soft); }
+.stocks-card:hover::before { transform: scaleY(1); }
+.stocks-card-icon  { font-size: 28px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.stocks-card-inner { flex: 1; min-width: 0; }
+.stocks-card-head  { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.stocks-card-name  { font-family: var(--font-serif); font-size: 17px; font-weight: 700; color: var(--c-navy); letter-spacing: 0.04em; }
+.stocks-card-en    { font-family: var(--font-display); font-size: 11px; color: var(--c-text-3); letter-spacing: 0.15em; font-style: italic; }
+.stocks-card-desc  { font-size: 13.5px; line-height: 1.85; color: var(--c-text-2); margin-bottom: 10px; }
+.stocks-card-badge { display: inline-block; font-size: 11px; font-family: var(--font-serif); letter-spacing: 0.08em; color: var(--c-gold); border: 1px solid rgba(184,146,72,0.4); border-radius: 2px; padding: 2px 9px; background: rgba(184,146,72,0.06); }
+.stocks-intro-row  { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+.stocks-count-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--c-navy); color: var(--c-gold-soft); font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.1em; padding: 8px 18px; border-radius: 2px; }
+.stocks-count-badge strong { font-family: var(--font-display); font-size: 22px; color: var(--c-gold); font-style: italic; }
+
+@media (max-width: 900px) { .stocks-card-grid { grid-template-columns: 1fr; gap: 14px; } }
+@media (max-width: 640px) { .stocks-card { padding: 18px 16px; gap: 14px; } .stocks-card-icon { font-size: 24px; } }
