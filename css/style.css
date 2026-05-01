@@ -3329,3 +3329,17 @@ p {
     max-height: 90px !important;
   }
 }
+
+/* 記事カード画像高さ さらに縮小 */
+.article-cover {
+  height: 80px !important;
+  max-height: 80px !important;
+}
+
+@media (max-width: 640px) {
+  .article-cover,
+  .article-card .article-cover {
+    height: 60px !important;
+    max-height: 60px !important;
+  }
+}
