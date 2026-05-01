@@ -3306,3 +3306,12 @@ p {
     min-height: unset !important;
   }
 }
+
+/* 記事カード画像高さ 120pxに変更 */
+@media (max-width: 640px) {
+  .article-cover,
+  .article-card .article-cover {
+    height: 120px !important;
+    max-height: 120px !important;
+  }
+}
