@@ -2528,8 +2528,10 @@ section {
    about-patrol グリッド比率調整
    テキスト40% : 画像60% に変更
    ============================================ */
-#about-patrol {
-  grid-template-columns: 40% 60% !important;
+@media (min-width: 901px) {
+  #about-patrol {
+    grid-template-columns: 40% 60% !important;
+  }
 }
 
 /* object-positionをcenterに戻す */
@@ -2541,8 +2543,10 @@ section {
    about-patrol 新画像（4:3）対応
    グリッドを50:50に戻してaspect-ratioを4:3に
    ============================================ */
-#about-patrol {
-  grid-template-columns: 45% 55% !important;
+@media (min-width: 901px) {
+  #about-patrol {
+    grid-template-columns: 45% 55% !important;
+  }
 }
 
 #about-patrol .crisis-image-stack .crisis-image-wrap {
