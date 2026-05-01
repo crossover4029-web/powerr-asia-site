@@ -2436,10 +2436,12 @@ section {
 .author-analysis p { font-size: 0.9rem; line-height: 1.85; color: var(--c-text-2); margin: 0; text-align: left !important; }
 .author-analysis p strong { color: var(--c-navy, #1a2d4f); }
 
-/* crisis・about 全修正統合 */
-#crisis-hormuz, #crisis-storage { grid-template-columns: 44% 56% !important; }
-#crisis-malacca, #crisis-debt { grid-template-columns: 56% 44% !important; }
-.crisis-blocks-wrap .crisis-text { padding: 32px 28px !important; }
+/* crisis・about 全修正統合 — PC(901px以上)のみ適用 */
+@media (min-width: 901px) {
+  #crisis-hormuz, #crisis-storage { grid-template-columns: 44% 56% !important; }
+  #crisis-malacca, #crisis-debt { grid-template-columns: 56% 44% !important; }
+  .crisis-blocks-wrap .crisis-text { padding: 32px 28px !important; }
+}
 
 .bridge-text--lead {
   font-family: var(--font-serif); font-size: clamp(1rem, 2vw, 1.4rem);
@@ -3170,4 +3172,58 @@ p {
   word-break: normal !important;
   line-break: auto !important;
   overflow-wrap: break-word;
+}
+
+/* ============================================
+   crisis-block スマホ完全1カラム化（最終版）
+   既存の全グリッド指定を上書き
+   ============================================ */
+@media (max-width: 900px) {
+  .crisis-block,
+  .crisis-block--alt,
+  .crisis-blocks-wrap .crisis-block,
+  .crisis-blocks-wrap .crisis-block--alt,
+  #crisis-hormuz,
+  #crisis-malacca,
+  #crisis-storage,
+  #crisis-debt {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+  }
+
+  .crisis-block--alt > * {
+    direction: ltr !important;
+  }
+
+  .crisis-image-wrap,
+  .crisis-image-stack {
+    width: 100% !important;
+    max-height: 260px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .crisis-image-stack {
+    flex-direction: row !important;
+    max-height: 180px !important;
+  }
+
+  .crisis-text {
+    padding: 24px 20px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .crisis-image-wrap,
+  .crisis-image-stack {
+    max-height: 200px !important;
+  }
+
+  .crisis-image-stack {
+    max-height: 140px !important;
+  }
+
+  .crisis-text {
+    padding: 20px 16px !important;
+  }
 }
