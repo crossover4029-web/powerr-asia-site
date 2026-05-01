@@ -3293,3 +3293,16 @@ p {
     height: 160px !important;
   }
 }
+
+/* ============================================
+   記事カード 画像高さ強制固定（最終版）
+   ============================================ */
+@media (max-width: 640px) {
+  .article-cover,
+  .article-card .article-cover {
+    height: 160px !important;
+    max-height: 160px !important;
+    aspect-ratio: unset !important;
+    min-height: unset !important;
+  }
+}
