@@ -2414,15 +2414,57 @@ section {
 }
 
 /* ============================================
-   about-finance1 新画像（900x1200 / 3:4縦長）対応
+   about①タスクフォース ブロック修正
+   ============================================ */
+
+/* ②画像下余白解消：縦長画像をcoverで埋める */
+#about-taskforce .crisis-image-wrap {
+  aspect-ratio: 4 / 3;
+}
+#about-taskforce .crisis-img {
+  object-fit: cover;
+  object-position: center top;
+  background: none;
+}
+
+/* ①一帯一路カード化（紺背景＋金ボーダー） */
+#about-taskforce .crisis-text > p:last-of-type {
+  background: var(--c-navy, #1a2d4f);
+  color: #e8dcc8;
+  border-left: 4px solid var(--c-gold, #b89248);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-top: 1.2rem;
+  line-height: 1.8;
+  font-size: 0.93rem;
+  text-align: left;
+}
+#about-taskforce .crisis-text > p:last-of-type strong {
+  color: var(--c-gold, #b89248);
+}
+
+/* ============================================
+   about② finance1 新画像（3:4縦長）対応
    ============================================ */
 #about-finance1 .crisis-image-wrap {
   aspect-ratio: 3 / 4;
   align-self: stretch;
 }
-
 #about-finance1 .crisis-img {
   object-fit: cover;
   object-position: center top;
   background: none;
 }
+
+/* ============================================
+   crisis・about 本文左寄せ（text-alignのみ）
+   ============================================ */
+.crisis-num { text-align: left; }
+.crisis-heading { text-align: left; }
+.crisis-text > p { text-align: left; }
+.crisis-risk-item > p { text-align: left; }
+.crisis-storage-card > p { text-align: left; }
+.about-blocks-wrap .crisis-text > p { text-align: left; }
+.about-blocks-wrap .crisis-heading { text-align: left; }
+.about-blocks-wrap .crisis-num { text-align: left; }
+.about-disclaimer { text-align: left; }
