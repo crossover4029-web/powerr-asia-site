@@ -3373,3 +3373,77 @@ p {
     text-align: center;
   }
 }
+
+/* ============================================
+   横スクロール・見切れ 根本対策（最終一括修正）
+   ============================================ */
+
+/* 1. サイト全体の横スクロール禁止 */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* 2. 全要素の横幅オーバー防止 */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 3. white-space: nowrap をスマホで解除 */
+@media (max-width: 900px) {
+  .map-label {
+    white-space: normal !important;
+  }
+
+  .bridge-text--large {
+    white-space: normal !important;
+    font-size: clamp(1.8rem, 7vw, 3rem) !important;
+  }
+}
+
+/* 4. crisis-text内の全テキスト横幅制御 */
+.crisis-text,
+.crisis-text p,
+.crisis-text strong,
+.crisis-text h3,
+.crisis-debt-case,
+.crisis-debt-case p,
+.crisis-risk-item,
+.crisis-risk-item p {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+}
+
+/* 5. インラインスタイルのtext-align:centerをスマホで左寄せ */
+@media (max-width: 900px) {
+  .crisis-text p,
+  .crisis-text p[style*="center"],
+  #crisis-debt .crisis-text p {
+    text-align: left !important;
+  }
+
+  .bri-badge {
+    display: inline-block !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+}
+
+/* 6. crisis-block スマホpaddingの一本化 */
+@media (max-width: 900px) {
+  .crisis-text,
+  .crisis-blocks-wrap .crisis-text,
+  .about-blocks-wrap .crisis-text {
+    padding: 24px 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .crisis-text,
+  .crisis-blocks-wrap .crisis-text,
+  .about-blocks-wrap .crisis-text {
+    padding: 20px 14px !important;
+  }
+}
