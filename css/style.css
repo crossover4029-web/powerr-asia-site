@@ -2623,8 +2623,8 @@ section {
 @media (max-width: 900px) {
   .crisis-block,
   .crisis-block--alt {
-    grid-template-columns: 1fr;
-    direction: ltr;
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
   }
 
   .crisis-image-wrap {
@@ -3184,13 +3184,6 @@ section {
   padding-right: 36px !important;
 }
 
-@media (max-width: 900px) {
-  #crisis-hormuz .crisis-text,
-  #crisis-storage .crisis-text { padding-left: 18px !important; }
-  #crisis-malacca .crisis-text,
-  #crisis-debt .crisis-text    { padding-right: 18px !important; }
-}
-
 /* ============================================
    Edge / Safari 互換・スマホ表示修正
    ============================================ */
@@ -3441,8 +3434,9 @@ img, video, iframe {
    5. word-break: auto-phrase 無効化（縦1文字バグ対策）
    ------------------------------------------ */
 body, p, .crisis-text, .section-lead {
+  word-break: normal !important;
   line-break: auto !important;
-  overflow-wrap: break-word !important;
+  overflow-wrap: break-word;
 }
 
 /* ------------------------------------------
@@ -3512,14 +3506,7 @@ body, p, .crisis-text, .section-lead {
 
   /* テキスト内コンテンツの幅超過防止 */
   .crisis-text *,
-  .about-blocks-wrap .crisis-text *,
-  .crisis-risk-item p,
-  .crisis-debt-case p,
-  .crisis-debt-case strong,
-  .crisis-summary-card p,
-  .cscard-list li,
-  .cscard-text,
-  .crisis-storage-source {
+  .about-blocks-wrap .crisis-text * {
     max-width: 100% !important;
     overflow-wrap: break-word !important;
     word-break: break-word !important;
@@ -3553,7 +3540,7 @@ body, p, .crisis-text, .section-lead {
 
   .crisis-image-stack { max-height: 140px !important; }
 
-  .crisis-storage-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .crisis-storage-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
 
   .crisis-text p        { font-size: 1rem !important; }
   .key-card,
