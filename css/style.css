@@ -2327,7 +2327,7 @@ section {
 }
 
 .crisis-image-stack .crisis-img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   background: #0a0a14;
 }
@@ -2623,8 +2623,8 @@ section {
 @media (max-width: 900px) {
   .crisis-block,
   .crisis-block--alt {
-    grid-template-columns: 1fr !important;
-    direction: ltr !important;
+    grid-template-columns: 1fr;
+    direction: ltr;
   }
 
   .crisis-image-wrap {
