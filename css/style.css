@@ -3188,13 +3188,9 @@ section {
 
 @media (max-width: 900px) {
   #crisis-hormuz .crisis-text,
-  #crisis-storage .crisis-text {
-    padding-left: 18px !important;
-  }
+  #crisis-storage .crisis-text { padding-left: 18px !important; }
   #crisis-malacca .crisis-text,
-  #crisis-debt .crisis-text {
-    padding-right: 18px !important;
-  }
+  #crisis-debt .crisis-text    { padding-right: 18px !important; }
 }
 
 /* ============================================
@@ -3445,8 +3441,7 @@ img, video, iframe {
 
 /* ------------------------------------------
    5. word-break: auto-phrase 無効化（縦1文字バグ対策）
-      PC: normal（自然な禁則処理）
-      スマホ: break-word（右見切れ防止）
+      ※スマホでは break-word を優先して右見切れを防止
    ------------------------------------------ */
 body, p, .crisis-text, .section-lead {
   word-break: normal !important;
@@ -3454,16 +3449,11 @@ body, p, .crisis-text, .section-lead {
   overflow-wrap: break-word;
 }
 
+/* スマホ：全テキストを強制折り返し */
 @media (max-width: 767px) {
-  body, p, .crisis-text, .section-lead,
-  .crisis-text *, .crisis-risk-item p,
-  .crisis-debt-case p, .crisis-summary-card p,
-  .cscard-list li, .cscard-text,
-  .storage-note, .debt-case-label,
-  .crisis-heading, strong {
+  * {
     word-break: break-word !important;
     overflow-wrap: break-word !important;
-    white-space: normal !important;
   }
 }
 
