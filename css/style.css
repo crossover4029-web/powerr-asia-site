@@ -3441,18 +3441,8 @@ img, video, iframe {
    5. word-break: auto-phrase 無効化（縦1文字バグ対策）
    ------------------------------------------ */
 body, p, .crisis-text, .section-lead {
-  word-break: normal !important;
   line-break: auto !important;
   overflow-wrap: break-word !important;
-}
-
-/* スマホでは word-break も break-word に切り替え（右見切れ防止） */
-@media (max-width: 767px) {
-  body, p, li, td, th, span, strong, em, a,
-  .crisis-text, .section-lead,
-  .crisis-text * {
-    word-break: break-word !important;
-  }
 }
 
 /* ------------------------------------------
@@ -3522,7 +3512,14 @@ body, p, .crisis-text, .section-lead {
 
   /* テキスト内コンテンツの幅超過防止 */
   .crisis-text *,
-  .about-blocks-wrap .crisis-text * {
+  .about-blocks-wrap .crisis-text *,
+  .crisis-risk-item p,
+  .crisis-debt-case p,
+  .crisis-debt-case strong,
+  .crisis-summary-card p,
+  .cscard-list li,
+  .cscard-text,
+  .crisis-storage-source {
     max-width: 100% !important;
     overflow-wrap: break-word !important;
     word-break: break-word !important;
