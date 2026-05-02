@@ -48,7 +48,7 @@
       <a href="#nisa">新NISAで考える</a>
       <a href="#articles">記事一覧</a>
       <a href="#youtube">YouTube</a>
-      <!-- AFFILIATE/EXT LINK PLACEHOLDER: noteのプロフィールURLに置き換え -->
+      <!-- ★ NOTE REPLACE: href="#note" → noteプロフィールURL。または上部JSのNOTE_URLを設定してください -->
       <a href="#note" class="cta">noteへ</a>
     </nav>
 
@@ -318,11 +318,13 @@
         出典：<a href="https://x-bomberth.com/20260310aseanoil/" target="_blank" rel="noopener">X-bomber Thailand（2026年3月）</a>
       </p>
 
-      <p style="margin-top:2rem;">
-        <strong>日本が254日分の備蓄を持つのに対し、ベトナムは15日、インドネシアは20日。</strong><br>
-        <strong>供給が2〜3週間止まるだけで燃料が底をつく国がアジアに複数あります。</strong><br>
-        <strong>備蓄タンクを作る資金がない——この現実が、次の問題につながります。</strong>
-      </p>
+      <div class="crisis-summary-card crisis-summary-card--warning">
+        <ul class="cscard-list">
+          <li>日本が<strong>254日分</strong>の備蓄を持つのに対し、ベトナムは<strong>15日</strong>、インドネシアは<strong>20日</strong>。</li>
+          <li>供給が<strong>2〜3週間止まるだけ</strong>で燃料が底をつく国がアジアに複数あります。</li>
+          <li>備蓄タンクを作る資金がない——この現実が、次の問題につながります。</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -374,10 +376,9 @@
           </p>
         </div>
       </div>
-      <p>
-        エネルギーの「入口」となる港や備蓄施設が他国に握られることは、
-        単なる経済問題ではなく、安全保障上の重大リスクです。<strong>アジア各国はこの構造から抜け出す「別の選択肢」を必要としていました。</strong>
-      </p>
+      <div class="crisis-summary-card crisis-summary-card--security">
+        <p class="cscard-text">エネルギーの「入口」となる港や備蓄施設が他国に握られることは、単なる経済問題ではなく、<strong>安全保障上の重大リスク</strong>です。<br>アジア各国はこの構造から抜け出す<strong>「別の選択肢」</strong>を必要としていました。</p>
+      </div>
     </div>
   </div>
 
@@ -386,9 +387,9 @@
   <!-- NOTE誘導ブリッジ（大型） -->
   <div class="crisis-note-bridge">
     <div class="container">
-      <p class="cnb-date">2025年11月 ── 一帯一路拡大会議</p>
-      <h3 class="cnb-title">中国が動いた。</h3>
       <p class="cnb-subtitle">「アジアエネルギー共同体構想」</p>
+      <h3 class="cnb-title">中国が動いた。</h3>
+      <p class="cnb-date">2025年11月 ── 一帯一路拡大会議</p>
       <div class="cnb-points">
         <div class="cnb-point">
           <span class="cnb-num">①</span>
@@ -582,8 +583,8 @@
         <p>巡視船の供与は、単なる船の提供にとどまりません。<strong>運用・人材育成・維持管理・海上法執行の実務能力を含めた、長期的な能力構築支援</strong>として位置づけられます。</p>
         <p class="key-card">エネルギーや資源は、港・タンカー・海上交通路を通じて運ばれます。だからこそ、POWERR Asiaが掲げる「安全なシーレーンの構築」は、こうした海上保安協力の蓄積とも重なります。<strong>日本の支援は軍事的対立を前面に出すものではなく、各国が自国の海を法に基づいて守るための基盤づくり</strong>と見ることができます。</p>                <!-- NOTE誘導 -->
         <div class="about-note-cta">
-          <p>POWERR Asiaの全体像と、投資家・生活者への示唆——続きは<strong>noteで公開</strong>しています。</p>
-          <a href="#note" class="cnb-btn" style="margin-top:16px; display:inline-block;">noteで続きを読む →</a>
+          <p>POWERR Asiaの全体像と、投資家・生活者への示唆——<br>続きは<strong>noteで公開</strong>しています。</p>
+          <a href="#note" class="cnb-btn" style="margin-top:14px; display:inline-block;">noteで続きを読む →</a>
         </div>
       </div>
     </div>
@@ -684,30 +685,50 @@
       </div>
 
       <div class="hook-question-grid">
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.1</span>
-          <h4>ガソリン代</h4>
-          <p>原油の安定供給が進めば、家計の負担はどう動くのか。</p>
+        <div class="hook-q-card hook-q-card--photo">
+          <div class="hook-q-card-photo-area" style="background-image: url('images/japanese-gas-station-night-high-fuel-prices-car-refueling.jpg');"></div>
+          <div class="hook-q-card-overlay"></div>
+          <div class="hook-q-card-content">
+            <span class="hook-q-icon">Q.1</span>
+            <h4>ガソリン代</h4>
+            <p>原油の安定供給が進めば、家計の負担はどう動くのか。</p>
+          </div>
         </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.2</span>
-          <h4>電気代</h4>
-          <p>エネルギー安全保障の強化は、毎月の電力料金にも関わる論点。</p>
+        <div class="hook-q-card hook-q-card--photo">
+          <div class="hook-q-card-photo-area" style="background-image: url('images/japanese-home-interior-night-electric-meter-power-outlet.jpg');"></div>
+          <div class="hook-q-card-overlay"></div>
+          <div class="hook-q-card-content">
+            <span class="hook-q-icon">Q.2</span>
+            <h4>電気代</h4>
+            <p>エネルギー安全保障の強化は、毎月の電力料金にも関わる論点。</p>
+          </div>
         </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.3</span>
-          <h4>物価</h4>
-          <p>資源価格の変動が、食料品や日用品の値段にどう影響するか。</p>
+        <div class="hook-q-card hook-q-card--photo">
+          <div class="hook-q-card-photo-area" style="background-image: url('images/japanese-supermarket-interior-shopping-basket-price-tags.jpg');"></div>
+          <div class="hook-q-card-overlay"></div>
+          <div class="hook-q-card-content">
+            <span class="hook-q-icon">Q.3</span>
+            <h4>物価</h4>
+            <p>資源価格の変動が、食料品や日用品の値段にどう影響するか。</p>
+          </div>
         </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.4</span>
-          <h4>年金・老後</h4>
-          <p>日本企業の競争力が高まれば、長期の経済基盤にも追い風に。</p>
+        <div class="hook-q-card hook-q-card--photo">
+          <div class="hook-q-card-photo-area" style="background-image: url('images/elderly-japanese-couple-walking-park-golden-hour.jpg');"></div>
+          <div class="hook-q-card-overlay"></div>
+          <div class="hook-q-card-content">
+            <span class="hook-q-icon">Q.4</span>
+            <h4>年金・老後</h4>
+            <p>日本企業の競争力が高まれば、長期の経済基盤にも追い風に。</p>
+          </div>
         </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.5</span>
-          <h4>資産形成</h4>
-          <p>新NISAで何を選ぶか。国策テーマは長期投資の判断材料に。</p>
+        <div class="hook-q-card hook-q-card--photo">
+          <div class="hook-q-card-photo-area" style="background-image: url('images/smartphone-stock-market-app-japanese-yen-investment-planning.jpg');"></div>
+          <div class="hook-q-card-overlay"></div>
+          <div class="hook-q-card-content">
+            <span class="hook-q-icon">Q.5</span>
+            <h4>資産形成</h4>
+            <p>新NISAで何を選ぶか。国策テーマは長期投資の判断材料に。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -718,24 +739,24 @@
     <div class="container">
       <div class="hook-stats-grid">
         <div class="hook-stat">
-          <span class="num">90<span class="unit">%以上</span></span>
           <div class="label">原油の海外依存度</div>
+          <span class="num">90<span class="unit">%以上</span></span>
           <div class="desc">日本のエネルギーは、その大部分を海外からの輸入に支えられています。</div>
         </div>
         <div class="hook-stat">
-          <span class="num">40<span class="unit">億人超</span></span>
           <div class="label">アジアの人口規模</div>
+          <span class="num">40<span class="unit">億人超</span></span>
           <div class="desc">世界人口の約半分が暮らすアジア。エネルギー需要は今後も拡大します。</div>
         </div>
         <div class="hook-stat">
-          <span class="num">∞</span>
           <div class="label">国策テーマの広がり</div>
+          <span class="num">∞</span>
           <div class="desc">商社・重工・海運・素材・金融 ─ 関連業界は枚挙にいとまがありません。</div>
         </div>
       </div>
 
       <div class="hook-cta-block">
-        <p class="hook-cta-heading--main">こんなにも、変わる。</p>
+        <p class="hook-cta-heading--main">近い未来はこんなにも、変わる。</p>
         <p class="hook-cta-heading--sub">あなたは、どう動く？</p>
         <a href="#note" class="btn btn-primary btn-arrow">noteで答えを見つける →</a>
         <p class="hook-cta-note">ガソリン代・電気代・物価・年金・資産形成──<br>5つの問いへの答えを、noteで丁寧に解説しています。</p>
@@ -757,42 +778,42 @@
     </p>
 
     <div class="card-grid">
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅰ</span>
         <h3>中東リスク</h3>
         <p>原油の輸送経路や産油国の情勢は、私たちの日常生活と物価に直結します。安定供給の確保が改めて問われています。</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅱ</span>
         <h3>原油価格</h3>
         <p>エネルギー価格の変動は、企業業績や家計、そして円安円高にも影響。長期視点での備えが重要です。</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅲ</span>
         <h3>重要鉱物</h3>
         <p>レアアース、レアメタル、銅、ニッケル ─ EVや再エネ、半導体に欠かせない資源の確保競争が始まっています。</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅳ</span>
         <h3>半導体・EV・AI時代の資源</h3>
         <p>これからの産業を動かす要は「資源と素材」。技術と資源、両方を握ることが国の競争力につながります。</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅴ</span>
         <h3>サプライチェーン分断</h3>
         <p>パンデミックや地政学リスクで、供給網はもろさを露呈。複数経路の確保と備蓄の強化が課題です。</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅵ</span>
         <h3>アジアの成長</h3>
         <p>東南アジア、南アジアは人口・市場の両面で成長中。エネルギー需要も拡大し、新しい協力関係が生まれます。</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅶ</span>
         <h3>日本企業の役割</h3>
         <p>商社・重工・海運・素材・金融 ─ 日本企業はサプライチェーンの実装力で、長く信頼を積み上げてきました。</p>
       </div>
-      <div class="fact-card">
+      <div class="fact-card fade-in-up">
         <span class="ico">Ⅷ</span>
         <h3>備蓄と供給網の強靱化</h3>
         <p>非常時にも止めない仕組みづくり。備蓄、代替経路、地域連携 ─ これらが投資テーマとしても注目され始めています。</p>
@@ -813,28 +834,39 @@
 <section class="compare" id="compare">
   <div class="container">
     <span class="section-eyebrow">Comparison</span>
-    <h2 class="section-title">一帯一路と何が違うのか</h2>
+    <h2 class="section-title">中国の「一帯一路」構想とは何が違うのか！？</h2>
     <p class="section-lead">
       一帯一路とPOWERR Asiaは、しばしば対比的に語られます。ここでは冷静に、両者の性格の違いを整理します。<br>
       対立を煽るのではなく、アジア各国に「選択肢を増やす」 ─ これがこの構想の本質です。
     </p>
 
-    <div class="compare-table">
-      <div class="compare-card">
-        <div class="label">REFERENCE — 既存の構想</div>
-        <h3>一帯一路（参考）</h3>
-        <ul>
-          <li>大規模インフラ投資を通じた影響力拡大として語られることが多い</li>
+    <!-- 1枚背景VSレイアウト -->
+    <div class="compare-vs-single" style="background-image: url('images/china-vs-japan-port-infrastructure-comparison-small-vs.jpg');">
+      <!-- 左半分オーバーレイ -->
+      <div class="compare-vs-single-overlay compare-vs-single-overlay--left"></div>
+      <!-- 右半分オーバーレイ -->
+      <div class="compare-vs-single-overlay compare-vs-single-overlay--right"></div>
+
+      <!-- 左：中国・一帯一路 -->
+      <div class="compare-vs-panel compare-vs-panel--china">
+        <div class="compare-vs-label">REFERENCE — 既存の構想</div>
+        <h3 class="compare-vs-title">一帯一路</h3>
+        <p class="compare-vs-sub">Belt and Road Initiative</p>
+        <p class="compare-vs-tagline">大規模インフラ投資を通じた<br>アジアへの中国の影響力拡大として<br>語られることが多い</p>
+        <ul class="compare-vs-list">
           <li>道路・港湾・鉄道などハードを軸とした展開</li>
           <li>融資条件や債務問題が指摘されるケースもある</li>
           <li>地政学的な影響力の議論と切り離せない</li>
         </ul>
       </div>
-      <div class="compare-card highlight">
-        <div class="label">PROPOSAL — 日本型の構想</div>
-        <h3>POWERR Asia（パワー・アジア）</h3>
-        <ul>
-          <li>エネルギー・資源・備蓄・供給網・金融支援を通じた支援構想として見ることができる</li>
+
+      <!-- 右：日本・POWERR Asia -->
+      <div class="compare-vs-panel compare-vs-panel--japan">
+        <div class="compare-vs-label">PROPOSAL — 日本型の構想</div>
+        <h3 class="compare-vs-title">POWERR Asia</h3>
+        <p class="compare-vs-sub">パワー・アジア</p>
+        <p class="compare-vs-tagline">エネルギー・資源・備蓄・<br>供給網・金融支援を通じた<br>支援構想</p>
+        <ul class="compare-vs-list">
           <li>日本が培ってきた信頼・技術・運用力を強みに</li>
           <li>アジア各国に「選択肢」を増やすことが目的</li>
           <li>対立ではなく、共に強くなる枠組みを志向</li>
@@ -875,7 +907,7 @@
 
     <div class="stocks-card-grid">
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">🏢</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -887,7 +919,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">⚡</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -899,7 +931,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">🔩</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -911,7 +943,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">🏗️</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -923,7 +955,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">🚢</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -935,7 +967,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">⛏️</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -947,7 +979,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">🏦</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -959,7 +991,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">🪨</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -971,7 +1003,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">🌏</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -983,7 +1015,7 @@
         </div>
       </div>
 
-      <div class="stocks-card">
+      <div class="stocks-card fade-in-up">
         <div class="stocks-card-icon">💡</div>
         <div class="stocks-card-inner">
           <div class="stocks-card-head">
@@ -1088,6 +1120,29 @@
         </div>
       </div>
     </div>
+
+    <!-- キャラクター紹介 -->
+    <div class="char-panel">
+      <span class="char-label">Cast — 登場キャラクター</span>
+      <div class="char-card fade-in-up">
+        <div class="char-avatar">🐕</div>
+        <div class="char-inner">
+          <div class="char-name">マックス <span>MAX</span></div>
+          <div class="char-detail">フレンチブルドック・黒白 ／ ネイビースーツ・金サングラス</div>
+          <p class="char-role">国際情勢とエネルギー・資源テーマを読み解くクールな分析担当。多くを語らず、数字とファクトで核心をつく。</p>
+          <span class="char-quote">「数字は嘘をつかない。」</span>
+        </div>
+      </div>
+      <div class="char-card fade-in-up">
+        <div class="char-avatar">🐱</div>
+        <div class="char-inner">
+          <div class="char-name">ルナ <span>LUNA</span></div>
+          <div class="char-detail">ラグドール猫・白グレー ／ 赤ドレス・金縁メガネ</div>
+          <p class="char-role">難しい内容を初心者目線でわかりやすく解説・ツッコミ担当。「要するにどういうこと？」を代わりに聞いてくれる。</p>
+          <span class="char-quote">「え、つまり私たちの電気代にも関係するの？」</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1126,8 +1181,12 @@
 
     <div class="article-grid">
       <!-- ARTICLE LINK PLACEHOLDER 1: ブログ記事URLへ差し替え -->
-      <a href="#" class="article-card">
-        <div class="article-cover c1"><span class="article-num">01</span></div>
+      <!-- ★ NOTE REPLACE: href="#" → note記事01のURL（5/02公開）に差し替え -->
+      <a href="#" class="article-card article-card--new">
+        <div class="article-cover c1">
+          <span class="article-num">01</span>
+          <span class="article-badge-new">NEW · 公開中</span>
+        </div>
         <div class="article-body">
           <span class="article-cat">Basics</span>
           <h3>POWERR Asiaとは何か？日本がアジアを支える新構想</h3>
@@ -1137,7 +1196,7 @@
       </a>
 
       <!-- ARTICLE LINK PLACEHOLDER 2 -->
-      <a href="#" class="article-card">
+      <a href="#" class="article-card fade-in-up">
         <div class="article-cover c2"><span class="article-num">02</span></div>
         <div class="article-body">
           <span class="article-cat">Compare</span>
@@ -1148,7 +1207,7 @@
       </a>
 
       <!-- ARTICLE LINK PLACEHOLDER 3 -->
-      <a href="#" class="article-card">
+      <a href="#" class="article-card fade-in-up">
         <div class="article-cover c3"><span class="article-num">03</span></div>
         <div class="article-body">
           <span class="article-cat">Resources</span>
@@ -1159,7 +1218,7 @@
       </a>
 
       <!-- ARTICLE LINK PLACEHOLDER 4 -->
-      <a href="#" class="article-card">
+      <a href="#" class="article-card fade-in-up">
         <div class="article-cover c4"><span class="article-num">04</span></div>
         <div class="article-body">
           <span class="article-cat">Japan Equities</span>
@@ -1170,7 +1229,7 @@
       </a>
 
       <!-- ARTICLE LINK PLACEHOLDER 5 -->
-      <a href="#" class="article-card">
+      <a href="#" class="article-card fade-in-up">
         <div class="article-cover c5"><span class="article-num">05</span></div>
         <div class="article-body">
           <span class="article-cat">New NISA</span>
@@ -1181,7 +1240,7 @@
       </a>
 
       <!-- ARTICLE LINK PLACEHOLDER 6 -->
-      <a href="#" class="article-card">
+      <a href="#" class="article-card fade-in-up">
         <div class="article-cover c6"><span class="article-num">06</span></div>
         <div class="article-body">
           <span class="article-cat">Life & Money</span>
@@ -1192,7 +1251,7 @@
       </a>
 
       <!-- ARTICLE LINK PLACEHOLDER 7 -->
-      <a href="#" class="article-card">
+      <a href="#" class="article-card fade-in-up">
         <div class="article-cover c7"><span class="article-num">07</span></div>
         <div class="article-body">
           <span class="article-cat">Energy Security</span>
@@ -1203,7 +1262,7 @@
       </a>
 
       <!-- ARTICLE LINK PLACEHOLDER 8 -->
-      <a href="#" class="article-card">
+      <a href="#" class="article-card fade-in-up">
         <div class="article-cover c8"><span class="article-num">08</span></div>
         <div class="article-body">
           <span class="article-cat">Perspective</span>
@@ -1230,7 +1289,7 @@
           じっくり腰を据えて学びたい方のための場所として、少しずつ整えていきます。
         </p>
         <div class="note-cta">
-          <!-- NOTE LINK PLACEHOLDER: noteのプロフィールURLへ差し替え -->
+          <!-- ★ NOTE REPLACE: href="#" → noteプロフィールURL。またはJSのNOTE_URLを設定 -->
           <a href="#" class="btn btn-primary btn-arrow">noteで深掘り記事を見る</a>
         </div>
       </div>
@@ -1383,6 +1442,25 @@
 </footer>
 
 <script>
+  /* ============================================
+     NOTE 実URL管理（一元置き換え用）
+     以下の NOTE_URL 変数を実際のnoteプロフィールURLに書き換えると
+     サイト内すべてのnoteリンクが一括更新されます。
+     例: const NOTE_URL = "https://note.com/powerr_asia";
+     ============================================ */
+  const NOTE_URL = null; // ← ここにnoteのURLを入力してください（例: "https://note.com/xxx"）
+
+  if (NOTE_URL) {
+    document.querySelectorAll('a[href="#note"], a[href="#"]').forEach(a => {
+      const text = a.textContent || '';
+      if (text.includes('note') || text.includes('Note') || a.classList.contains('cnb-btn')) {
+        a.href = NOTE_URL;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+    });
+  }
+
   // モバイルナビゲーションの開閉
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
@@ -1404,6 +1482,20 @@
   const m = String(today.getMonth() + 1).padStart(2, '0');
   const d = String(today.getDate()).padStart(2, '0');
   document.getElementById('today').textContent = `Updated · ${y}.${m}.${d}`;
+
+  // スクロール入場アニメーション
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('is-visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 </script>
 
 </body>
