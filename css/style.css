@@ -2323,12 +2323,12 @@ section {
   flex: 1;
   aspect-ratio: unset;
   min-height: 160px;
-  height: 300px;
+  height: 450px;
   background: #0a0a14;
 }
 
 .crisis-image-stack .crisis-img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   background: #0a0a14;
 }
