@@ -2800,22 +2800,10 @@ section {
   margin-bottom: 40px;
 }
 
+/* cnb-btn の旧定義 — ファイル末尾の BUTTON UPGRADE に移管済み */
 .cnb-btn {
-  display: inline-block;
-  background: #cc2222;
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 16px 40px;
-  border-radius: 4px;
   text-decoration: none;
-  letter-spacing: 0.08em;
-  transition: background 0.2s;
-}
-
-.cnb-btn:hover {
-  background: #a81a1a;
+  font-family: var(--font-sans);
 }
 
 @media (max-width: 480px) {
@@ -2852,10 +2840,7 @@ section {
   margin-bottom: 0;
   white-space: nowrap;
 }
-.about-note-cta .cnb-btn {
-  display: inline-block !important;
-  margin: 14px auto 0 !important;
-}
+/* .about-note-cta .cnb-btn — BUTTON UPGRADE セクションで上書き済み */
 
 .about-note-cta strong {
   color: var(--c-navy);
@@ -3909,4 +3894,354 @@ body, p, .crisis-text, .section-lead {
     background-size: cover;
     background-position: center top;
   }
+}
+
+/* ============================================
+   BUTTON UPGRADE — 押し売り感なし・存在感UP
+   ============================================ */
+
+/* --- cnb-btn（セクション内の誘導ボタン）--- */
+/* crisis-note-bridge 内: 白背景に映える大型ボタン */
+.cnb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--c-gold, #b8922a);
+  border: 2px solid var(--c-gold, #b8922a);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 15px 36px;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: background 0.22s, color 0.22s, transform 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.cnb-btn::after {
+  content: "→";
+  font-family: serif;
+  transition: transform 0.2s;
+}
+.cnb-btn:hover {
+  background: var(--c-gold, #b8922a);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.cnb-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* crisis-note-bridge はダーク背景なので白枠に */
+.crisis-note-bridge .cnb-btn {
+  color: #fff;
+  border-color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  padding: 17px 44px;
+  letter-spacing: 0.12em;
+}
+.crisis-note-bridge .cnb-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border-color: #fff;
+}
+
+/* about-note-cta: ゴールドアウトライン */
+.about-note-cta .cnb-btn {
+  display: inline-flex !important;
+  margin: 0 !important;
+  font-size: 0.9rem;
+  padding: 13px 30px;
+}
+
+/* --- .btn-primary 全体強化 --- */
+.btn-primary {
+  font-size: 15px;
+  padding: 15px 32px;
+  letter-spacing: 0.09em;
+  box-shadow: 0 4px 16px rgba(184,146,72,0.18);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(184,146,72,0.32);
+}
+
+/* hook セクション内の primary ボタン：最大サイズ */
+.hook-cta-block .btn-primary {
+  font-size: 1rem;
+  padding: 18px 48px;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 20px rgba(184,146,72,0.22);
+}
+.hook-cta-block .btn-primary:hover {
+  box-shadow: 0 12px 36px rgba(184,146,72,0.38);
+}
+
+/* compare セクション内 primary ボタン */
+.compare-cta-block .btn-primary {
+  font-size: 0.97rem;
+  padding: 16px 40px;
+}
+
+/* why セクション内 outline ボタン */
+.why-cta-block .btn-outline {
+  font-size: 0.95rem;
+  padding: 14px 36px;
+  letter-spacing: 0.09em;
+  border-width: 2px;
+}
+.why-cta-block .btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+/* note-section 内（記事一覧へ）*/
+.note-cta .btn-primary {
+  font-size: 0.95rem;
+  padding: 15px 36px;
+}
+
+/* about-note-cta の wrapper 調整 */
+.about-note-cta {
+  margin-top: 1.8rem;
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+}
+
+/* モバイル調整 */
+@media (max-width: 640px) {
+  .crisis-note-bridge .cnb-btn {
+    font-size: 0.9rem;
+    padding: 15px 32px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .hook-cta-block .btn-primary {
+    font-size: 0.95rem;
+    padding: 16px 32px;
+    width: 100%;
+    justify-content: center;
+  }
+  .compare-cta-block .btn-primary,
+  .why-cta-block .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   STOCKS BANNER — 関連テーマ10業界 全幅帯
+   ============================================ */
+.stocks-banner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: var(--c-navy);
+  border-left: 6px solid var(--c-gold);
+  border-radius: 3px;
+  padding: 28px 40px;
+  margin-bottom: 40px;
+}
+
+.stocks-banner-left {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.stocks-banner-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--c-gold-soft);
+}
+
+.stocks-banner-num {
+  font-family: var(--font-display, var(--font-serif));
+  font-size: 64px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--c-gold);
+  line-height: 1;
+}
+
+.stocks-banner-right {
+  border-left: 1px solid rgba(255,255,255,0.12);
+  padding-left: 32px;
+  flex: 1;
+}
+
+.stocks-banner-desc {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.7;
+  margin: 0 0 6px;
+  letter-spacing: 0.03em;
+}
+
+.stocks-banner-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .stocks-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 24px;
+    border-left-width: 4px;
+  }
+  .stocks-banner-num { font-size: 48px; }
+  .stocks-banner-right {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-left: 0;
+    padding-top: 16px;
+    width: 100%;
+  }
+  .stocks-banner-desc { font-size: 14px; }
+  .sp-br { display: none; }
+}
+
+/* ============================================
+   STOCKS CARD — タイトル・バッジ 強化
+   ============================================ */
+.stocks-card-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.stocks-card-en {
+  font-size: 12px;
+  color: var(--c-gold-soft);
+  letter-spacing: 0.18em;
+  opacity: 0.85;
+}
+
+.stocks-card-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--c-navy);
+  background: var(--c-gold);
+  border: none;
+  border-radius: 2px;
+  padding: 5px 14px;
+}
+
+@media (max-width: 640px) {
+  .stocks-card-name { font-size: 18px; }
+}
+
+/* STOCKS CARD BADGE — ネイビー背景・白文字 */
+.stocks-card-badge {
+  color: #fff;
+  background: var(--c-navy);
+}
+
+/* ============================================
+   STOCKS CTA BLOCK
+   ============================================ */
+.stocks-cta-block {
+  margin-top: 40px;
+  border-top: 1px solid var(--c-line-soft);
+  padding-top: 36px;
+}
+
+.stocks-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: var(--c-navy);
+  border-left: 6px solid var(--c-gold);
+  border-radius: 3px;
+  padding: 32px 40px;
+}
+
+.stocks-cta-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.stocks-cta-heading {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+}
+
+.stocks-cta-sub {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.stocks-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.stocks-cta-note-link {
+  font-size: 12px;
+  color: var(--c-gold-soft);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.stocks-cta-note-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .stocks-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 24px;
+    gap: 20px;
+  }
+  .stocks-cta-actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .stocks-cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .stocks-cta-note-link {
+    white-space: normal;
+  }
+}
+
+/* NISA btn サブテキスト */
+.nisa-btn-note {
+  display: block;
+  font-size: 11px;
+  color: var(--c-text-3);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 2px;
 }

@@ -17,6 +17,115 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet" href="css/style.css">
 
+<style>
+/* ============================================
+   ACCORDION — crisis / about / why セクション
+   ============================================ */
+
+/* タブナビ（セクション切り替え） */
+.acc-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 32px;
+}
+.acc-tab-btn {
+  padding: 8px 20px;
+  border: 1.5px solid var(--c-gold, #b8922a);
+  background: transparent;
+  color: var(--c-gold, #b8922a);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.acc-tab-btn.active,
+.acc-tab-btn:hover {
+  background: var(--c-gold, #b8922a);
+  color: #fff;
+}
+
+/* アコーディオン 1件 */
+.acc-item {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.acc-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 4px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.acc-header::-webkit-details-marker { display: none; }
+.acc-header::marker { display: none; }
+
+.acc-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--c-gold, #b8922a);
+  min-width: 24px;
+  flex-shrink: 0;
+}
+.acc-title-text {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--c-navy, #1a2a4a);
+}
+/* 白背景セクション向け（crisis は暗い背景が多いので色を反転） */
+.crisis .acc-title-text,
+.crisis .acc-chevron { color: #fff; }
+.crisis .acc-num { color: var(--c-gold, #b8922a); }
+.crisis .acc-item { border-bottom-color: rgba(255,255,255,0.12); }
+
+.acc-chevron {
+  font-size: 12px;
+  color: var(--c-gold, #b8922a);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  line-height: 1;
+}
+details[open] > .acc-header .acc-chevron {
+  transform: rotate(180deg);
+}
+
+/* コンテンツ開閉アニメーション */
+.acc-body {
+  overflow: hidden;
+  padding: 0 4px 24px;
+}
+
+/* 最初の1件はデフォルト開放 */
+details:first-child { }
+
+/* なぜ今・8枚グリッドをアコーディオン化 */
+.why-acc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 8px 0 20px;
+}
+@media (max-width: 640px) {
+  .why-acc-grid { grid-template-columns: 1fr; }
+  .acc-title-text { font-size: 14px; }
+  .acc-tab-btn { font-size: 12px; padding: 7px 14px; }
+}
+
+/* about セクションは白背景 */
+.about .acc-title-text { color: var(--c-navy, #1a2a4a); }
+.about .acc-chevron { color: var(--c-gold, #b8922a); }
+.about .acc-item { border-bottom-color: rgba(0,0,0,0.1); }
+.about .acc-header { padding: 16px 4px; }
+</style>
+
 </head>
 <body>
 
@@ -48,8 +157,6 @@
       <a href="#nisa">新NISAで考える</a>
       <a href="#articles">記事一覧</a>
       <a href="#youtube">YouTube</a>
-      <!-- ★ NOTE REPLACE: href="#note" → noteプロフィールURL。または上部JSのNOTE_URLを設定してください -->
-      <a href="#note" class="cta">noteへ</a>
     </nav>
 
     <button class="menu-toggle" id="menuToggle" aria-label="メニュー" aria-expanded="false">
@@ -132,8 +239,14 @@
   </div>
 
   <div class="container crisis-blocks-wrap">
-  <!-- ブロック① ホルムズ海峡 -->
-  <div class="crisis-block" id="crisis-hormuz">
+  <details class="acc-item" id="crisis-hormuz" open>
+<summary class="acc-header">
+  <span class="acc-num">01</span>
+  <span class="acc-title-text">ホルムズ海峡——世界の原油が通る「一本道」</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block" id="crisis-hormuz">
     <div class="crisis-image-stack">
       <div class="crisis-image-wrap">
         <img
@@ -188,8 +301,15 @@
     </div>
   </div>
 
-  <!-- ブロック② マラッカ海峡 -->
-  <div class="crisis-block crisis-block--alt" id="crisis-malacca">
+</div></details>
+  <details class="acc-item" id="crisis-malacca">
+<summary class="acc-header">
+  <span class="acc-num">02</span>
+  <span class="acc-title-text">マラッカ海峡——東南アジアの「最後の輸送路」も限界に近い</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block crisis-block--alt" id="crisis-malacca">
     <div class="crisis-image-wrap">
       <img
         src="images/strait-of-malacca-oil-tanker-congestion-shipping-risk.jpg"
@@ -239,8 +359,15 @@
     </div>
   </div>
 
-  <!-- ブロック③ 備蓄の少なさ -->
-  <div class="crisis-block" id="crisis-storage">
+</div></details>
+  <details class="acc-item" id="crisis-storage">
+<summary class="acc-header">
+  <span class="acc-num">03</span>
+  <span class="acc-title-text">「2週間で燃料が消える国もある」——アジアの備蓄量の現実</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block" id="crisis-storage">
     <div class="crisis-image-stack">
       <div class="crisis-image-wrap">
         <img
@@ -328,8 +455,15 @@
     </div>
   </div>
 
-  <!-- ブロック④ 一帯一路の罠（ライト版） -->
-  <div class="crisis-block crisis-block--alt" id="crisis-debt">
+</div></details>
+  <details class="acc-item" id="crisis-debt">
+<summary class="acc-header">
+  <span class="acc-num">04</span>
+  <span class="acc-title-text">お金がない → 中国に頼った → 港を手放した国がある</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block crisis-block--alt" id="crisis-debt">
     <div class="crisis-image-stack">
       <div class="crisis-image-wrap">
         <img
@@ -382,6 +516,7 @@
     </div>
   </div>
 
+</div></details>
   </div><!-- /.crisis-blocks-wrap -->
 
   <!-- NOTE誘導ブリッジ（大型） -->
@@ -405,7 +540,7 @@
         </div>
       </div>
       <p class="cnb-hook">この3点セットが意味することとは——<br>スリランカ、ザンビア、エクアドル……<br>「債務の罠」の全貌と、日本がPOWERR Asiaで<br>何を対抗しようとしているのか。</p>
-      <a href="#note" class="cnb-btn">noteで深掘りを読む →</a>
+      <a href="#compare" class="cnb-btn">一帯一路との違いを読む →</a>
     </div>
   </div>
 
@@ -448,8 +583,14 @@
 
   <div class="container about-blocks-wrap">
 
-    <!-- ブロック① 5者タスクフォース -->
-    <div class="crisis-block" id="about-taskforce">
+    <details class="acc-item" id="about-taskforce" open>
+<summary class="acc-header">
+  <span class="acc-num">01</span>
+  <span class="acc-title-text">施政方針と5者タスクフォース</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block" id="about-taskforce">
       <div class="crisis-image-wrap">
         <img src="images/japan-energy-security-policy-framework-jbic-jica-ministries.jpg"
           alt="JBIC・JICA・外務省・経産省・財務省によるアジアエネルギー安全保障タスクフォース"
@@ -463,8 +604,15 @@
       </div>
     </div>
 
-    <!-- ブロック② 第1弾資金構造 -->
-    <div class="crisis-block crisis-block--alt" id="about-finance1">
+</div></details>
+    <details class="acc-item" id="about-finance1">
+<summary class="acc-header">
+  <span class="acc-num">02</span>
+  <span class="acc-title-text">段階的に広がる 総額約100億ドル規模の金融支援</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block crisis-block--alt" id="about-finance1">
       <div class="crisis-image-wrap">
         <img src="images/powerr-asia-phased-financial-support-energy-supply-chain-900x1200.jpg"
           alt="総額約100億ドル規模・JBIC POWERR Asia FASTウィンドウによる金融支援"
@@ -479,8 +627,15 @@
       </div>
     </div>
 
-    <!-- ブロック③ 備蓄3倍と商社受注 -->
-    <div class="crisis-block" id="about-storage">
+</div></details>
+    <details class="acc-item" id="about-storage">
+<summary class="acc-header">
+  <span class="acc-num">03</span>
+  <span class="acc-title-text">備蓄3倍と日系商社の受注</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block" id="about-storage">
       <div class="crisis-image-wrap">
         <img src="images/oil-storage-expansion-30-to-90-days-japan-trading-companies-plant-consortium.jpg"
           alt="備蓄30日分から90日分へ3倍拡大・三井物産など日本商社プラント連合が共同受注"
@@ -494,8 +649,15 @@
       </div>
     </div>
 
-    <!-- ブロック④ JICA ODA第2弾 -->
-    <div class="crisis-block crisis-block--alt" id="about-oda">
+</div></details>
+    <details class="acc-item" id="about-oda">
+<summary class="acc-header">
+  <span class="acc-num">04</span>
+  <span class="acc-title-text">ODAも活用したエネルギーインフラ支援</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block crisis-block--alt" id="about-oda">
       <div class="crisis-image-wrap">
         <img src="images/asia-energy-supply-chain-buy-store-transport-stable-use.jpg"
           alt="JBICやODAを活用したアジアのエネルギーインフラ支援・備蓄タンク・港湾・送電網"
@@ -509,8 +671,15 @@
       </div>
     </div>
 
-    <!-- ブロック⑤ 中国依存からの脱却 -->
-    <div class="crisis-block" id="about-clause">
+</div></details>
+    <details class="acc-item" id="about-clause">
+<summary class="acc-header">
+  <span class="acc-num">05</span>
+  <span class="acc-title-text">中国依存を下げるエネルギー供給網の再設計</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block" id="about-clause">
       <div class="crisis-image-wrap">
         <img src="images/powerr-asia-energy-supply-chain-redesign.jpg"
           alt="中国依存を下げるエネルギー供給網の再設計・調達先多元化・日本型金融支援"
@@ -526,8 +695,15 @@
       </div>
     </div>
 
-    <!-- ブロック⑥ 官民連携による投資支援 -->
-    <div class="crisis-block crisis-block--alt" id="about-fund">
+</div></details>
+    <details class="acc-item" id="about-fund">
+<summary class="acc-header">
+  <span class="acc-num">06</span>
+  <span class="acc-title-text">官民連携による資源・エネルギー投資支援</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block crisis-block--alt" id="about-fund">
       <div class="crisis-image-wrap">
         <img src="images/powerr-asia-public-private-investment-bright-japan.jpg"
           alt="JBIC・JICA・NEXI・JOGMECによる官民連携のエネルギー資源投資支援"
@@ -546,8 +722,15 @@
       </div>
     </div>
 
-    <!-- ブロック⑦ シーレーン・安全保障 -->
-    <div class="crisis-block" id="about-defense">
+</div></details>
+    <details class="acc-item" id="about-defense">
+<summary class="acc-header">
+  <span class="acc-num">07</span>
+  <span class="acc-title-text">海上交通路まで含めたエネルギー安全保障の新モデル</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block" id="about-defense">
       <div class="crisis-image-wrap">
         <img src="images/japan-maritime-security-defense-package-hormuz-sea-lane.jpg"
           alt="海上自衛隊・シーレーン防衛・ホルムズ近海の安全保障パッケージ"
@@ -562,8 +745,15 @@
       </div>
     </div>
 
-    <!-- ブロック⑧ 巡視船供与 -->
-    <div class="crisis-block crisis-block--alt" id="about-patrol">
+</div></details>
+    <details class="acc-item" id="about-patrol">
+<summary class="acc-header">
+  <span class="acc-num">08</span>
+  <span class="acc-title-text">巡視船供与と海洋権益の保全</span>
+  <span class="acc-chevron">▼</span>
+</summary>
+<div class="acc-body">
+<div class="crisis-block crisis-block--alt" id="about-patrol">
       <div class="crisis-image-stack">
         <div class="crisis-image-wrap">
           <img src="images/japan-coast-guard-patrol-vessels-philippines-vietnam-blue-sky.jpg"
@@ -583,8 +773,7 @@
         <p>巡視船の供与は、単なる船の提供にとどまりません。<strong>運用・人材育成・維持管理・海上法執行の実務能力を含めた、長期的な能力構築支援</strong>として位置づけられます。</p>
         <p class="key-card">エネルギーや資源は、港・タンカー・海上交通路を通じて運ばれます。だからこそ、POWERR Asiaが掲げる「安全なシーレーンの構築」は、こうした海上保安協力の蓄積とも重なります。<strong>日本の支援は軍事的対立を前面に出すものではなく、各国が自国の海を法に基づいて守るための基盤づくり</strong>と見ることができます。</p>                <!-- NOTE誘導 -->
         <div class="about-note-cta">
-          <p>POWERR Asiaの全体像と、投資家・生活者への示唆——<br>続きは<strong>noteで公開</strong>しています。</p>
-          <a href="#note" class="cnb-btn" style="margin-top:14px; display:inline-block;">noteで続きを読む →</a>
+          <a href="#stocks" class="cnb-btn">生活・投資への影響を読む →</a>
         </div>
       </div>
     </div>
@@ -595,6 +784,7 @@
   </div>
 
 
+</div></details>
   </div><!-- /.about-blocks-wrap -->
 </section>
 
@@ -758,8 +948,7 @@
       <div class="hook-cta-block">
         <p class="hook-cta-heading--main">近い未来はこんなにも、変わる。</p>
         <p class="hook-cta-heading--sub">あなたは、どう動く？</p>
-        <a href="#note" class="btn btn-primary btn-arrow">noteで答えを見つける →</a>
-        <p class="hook-cta-note">ガソリン代・電気代・物価・年金・資産形成──<br>5つの問いへの答えを、noteで丁寧に解説しています。</p>
+        <a href="#articles" class="btn btn-primary btn-arrow">関連する深掘り記事を読む →</a>
       </div>
 
     </div>
@@ -822,7 +1011,7 @@
 
     <div class="why-cta-block">
       <p class="why-cta-text">なぜ今なのか。その答えは、8つのテーマが「複雑に絡み、同時に動いている」ことにあります。</p>
-      <a href="#note" class="btn btn-outline btn-arrow">noteで全体像を把握する →</a>
+      <a href="#articles" class="btn btn-outline btn-arrow">8つの論点を深掘りする →</a>
     </div>
 
   </div>
@@ -893,7 +1082,7 @@
 
     <div class="compare-cta-block">
       <p class="compare-cta-upper">一帯一路 vs POWERR Asia──<br>アジアの未来を賭けた、静かな戦いが始まっている。</p>
-      <a href="#note" class="btn btn-primary btn-arrow">noteで対決の構図を読む →</a>
+      <a href="#articles" class="btn btn-primary btn-arrow">この論点を詳しく読む →</a>
       <p class="compare-cta-lower">99年間。スリランカが港を失った年数。<br>日本はこの構図を、アジア全体で繰り返させない。</p>
     </div>
 
@@ -912,9 +1101,15 @@
       ※特定の銘柄を推奨するものではありません。長期テーマとしての全体像をつかむための整理です。
     </p>
 
-    <div class="stocks-intro-row">
-      <div class="stocks-count-badge">
-        関連テーマ <strong>10</strong> 業界
+    <div class="stocks-banner">
+      <div class="stocks-banner-left">
+        <span class="stocks-banner-label">関連テーマ</span>
+        <span class="stocks-banner-num">10</span>
+        <span class="stocks-banner-label">業界</span>
+      </div>
+      <div class="stocks-banner-right">
+        <p class="stocks-banner-desc">商社・エネルギー・重工・海運・金融など、<br class="sp-br">POWERR Asiaの実務を担う産業群を整理しました。</p>
+        <p class="stocks-banner-note">長期テーマとしての概観です。特定銘柄の推奨ではありません。</p>
       </div>
     </div>
 
@@ -1045,6 +1240,19 @@
     <div class="disclaimer-box">
       ※このサイトは特定銘柄の売買を推奨するものではありません。投資判断は自己責任でお願いします。各テーマは「今後注目される可能性のある業界」として整理したものであり、将来の値動きを保証するものではありません。
     </div>
+
+    <div class="stocks-cta-block">
+      <div class="stocks-cta-inner">
+        <div class="stocks-cta-text">
+          <p class="stocks-cta-heading">10業界それぞれの深掘り分析</p>
+          <p class="stocks-cta-sub">各業界がPOWERR Asiaとどう結びつくか、企業名・事業領域・投資視点から整理した記事を準備中です。</p>
+        </div>
+        <div class="stocks-cta-actions">
+          <a href="#articles" class="btn btn-primary btn-arrow">関連する深掘り記事を読む →</a>
+          <a href="#note" class="stocks-cta-note-link">業界マップ・テーマ整理表（深掘りコンテンツ）</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1077,9 +1285,11 @@
         </p>
         <div class="nisa-buttons">
           <!-- AFFILIATE PLACEHOLDER: 証券会社・新NISA記事へ差し替え -->
-          <a href="#" class="nisa-btn">新NISAの始め方を見る</a>
+          <a href="https://crossover4029-web.github.io/nisa-site/" class="nisa-btn" target="_blank" rel="noopener">新NISAの始め方を見る</a>
+          <span class="nisa-btn-note">初心者のための新NISA完全ガイド</span>
           <!-- AFFILIATE PLACEHOLDER: 長期投資基礎記事へ差し替え -->
-          <a href="#" class="nisa-btn">長期投資の基本を学ぶ</a>
+          <a href="https://crossover4029-web.github.io/nisa-site/#section2" class="nisa-btn" target="_blank" rel="noopener">長期投資の基本を学ぶ</a>
+          <span class="nisa-btn-note">インデックス投資・複利・ほっとけ投資とは</span>
         </div>
       </div>
     </div>
@@ -1295,15 +1505,14 @@
   <div class="container">
     <div class="note-grid">
       <div class="note-text">
-        <span class="section-eyebrow">Deep Dive on note</span>
-        <h2 class="section-title">無料記事では伝えきれない<br>深掘りをnoteへ</h2>
+        <span class="section-eyebrow">Deep Dive</span>
+        <h2 class="section-title">もっと深く<br>知りたい方へ</h2>
         <p class="section-lead">
-          ブログでは基礎をわかりやすく解説し、noteでは図解、企業テーマ整理表、国策投資の読み方、動画台本、学習メモなどを深掘りしていく予定です。<br>
-          じっくり腰を据えて学びたい方のための場所として、少しずつ整えていきます。
+          図解資料、業界マップ、テーマ整理表など、より詳しく学べるコンテンツを順次整備しています。<br>
+          関心のあるテーマから、自分のペースでどうぞ。
         </p>
         <div class="note-cta">
-          <!-- ★ NOTE REPLACE: href="#" → noteプロフィールURL。またはJSのNOTE_URLを設定 -->
-          <a href="#" class="btn btn-primary btn-arrow">noteで深掘り記事を見る</a>
+          <a href="#articles" class="btn btn-primary btn-arrow">記事一覧を見る →</a>
         </div>
       </div>
 
@@ -1441,7 +1650,7 @@
         <h4>Follow</h4>
         <ul>
           <!-- EXTERNAL LINK PLACEHOLDER -->
-          <li><a href="#note">note</a></li>
+          <li><a href="#note">深掘りコンテンツ</a></li>
           <li><a href="#youtube">YouTube</a></li>
         </ul>
       </div>
@@ -1466,7 +1675,7 @@
   if (NOTE_URL) {
     document.querySelectorAll('a[href="#note"], a[href="#"]').forEach(a => {
       const text = a.textContent || '';
-      if (text.includes('note') || text.includes('Note') || a.classList.contains('cnb-btn')) {
+      if (a.classList.contains('cnb-btn') || a.href.includes('note.com')) {
         a.href = NOTE_URL;
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
